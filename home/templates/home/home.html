@@ -67,7 +67,6 @@
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#tf-home" class="page-scroll">Home</a></li>
             <li><a href="#tf-about" class="page-scroll">About</a></li>
-            <li><a href="#tf-clients" class="page-scroll">Club</a></li>
             <li><a href="#tf-services" class="page-scroll">Event</a></li>
             <li><a href="#tf-team" class="page-scroll">Week Schedule</a></li>
             <li><a href="#tf-works" class="page-scroll">Introducing</a></li>
@@ -170,49 +169,6 @@
     </div>
 
  
-  <!-- Clients Section
-    ==========================================-->
-    <div id="tf-clients" class="text-center">
-        <div class="overlay">
-            <div class="container">
-
-                <div class="section-title center">
-                    <h2><strong>광풍연을 이루는 7개 패</strong></h2>
-                    <div class="line">
-                        <hr>
-                    </div>
-                </div>
-                <div id="clients" class="owl-carousel owl-theme">
-                    <div class="item">
-                        <img src="{% static "img/client/1.png" %}">
-                    </div>
-                    <div class="item">
-                        <img src="{% static "img/client/2.png" %}">
-                    </div>
-                    <div class="item">
-                        <img src="{% static "img/client/3.png" %}">
-                    </div>
-                    <div class="item">
-                        <img src="{% static "img/client/4.png" %}">
-                    </div>
-                    <div class="item">
-                        <img src="{% static "img/client/5.png" %}">
-                    </div>
-                    <div class="item">
-                        <img src="{% static "img/client/6.png" %}">
-                    </div>
-                    <div class="item">
-                        <img src="{% static "img/client/7.png" %}">
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-
-
 
     <!-- Services Section
     ==========================================-->
@@ -265,7 +221,7 @@
         <div class="overlay">
             <div class="container">
                 <div class="section-title center">
-                    <h2>광풍연 <strong>매주 연습 일정</strong></h2>
+                    <h2>광풍연 <strong>연습 일정</strong></h2>
                     <div class="line">
                         <hr>
                     </div>
@@ -274,10 +230,11 @@
                 <div id="team" class="owl-carousel owl-theme row">
                     <div class="item">
                         <div class="thumbnail">
-                            <img src="{% static "img/client/1.png" %}" alt="..." class="img-circle team-img">
+                            <img src="{% static "img/client/kw.png" %}" alt="..." class="img-circle team-img">
                             <div class="caption">
                                 <h3>월요일</h3>
-                                <p>풍연 공식 연습날</p>
+                                <p style="font-size: 15px;">풍연 공식 연습날</p>
+                                <p style="font-size: 15px;">집부회의</p>
                                 
                             </div>
                         </div>
@@ -285,22 +242,26 @@
 
                     <div class="item">
                         <div class="thumbnail">
-                            <img src="{% static "img/client/4.png" %}" alt="..." class="img-circle team-img">
+                            <img style="float: left;" src="{% static "img/client/3.png" %}" alt="..." class="img-circle team-img">
+                            <img style="float; left;" src="{% static "img/client/7.png" %}" alt="..." class="img-circle team-img">
                             <div class="caption">
                                 <h3>화요일</h3>
-                                <p>굴렁쇠 연습날</p>
-                                <p>난장 연습날</p>
+                                <p style="font-size: 15px;">산지니 연습날</p>
+                                <p style="font-size: 15px;">난장 연습날</p>
                                 
                             </div>
                         </div>
                     </div>
 
+
                     <div class="item">
                         <div class="thumbnail">
-                            <img src="{% static "img/client/7.png" %}" alt="..." class="img-circle team-img">
+                            <img style="float: left;" src="{% static "img/client/1.png" %}" alt="..." class="img-circle team-img">
+                            <img style="float; left;" src="{% static "img/client/2.png" %}" alt="..." class="img-circle team-img">
                             <div class="caption">
                                 <h3>수요일</h3>
-                                <p>사통백이 연습날</p>
+                                <p style="font-size: 15px;">사통백이  연습날</p>
+                                <p style="font-size: 15px;">산소래 연습날</p>
                                 
                             </div>
                         </div>
@@ -308,32 +269,23 @@
 
                     <div class="item">
                         <div class="thumbnail">
-                            <img src="{% static "img/client/3.png" %}" alt="..." class="img-circle team-img">
+                            <img src="{% static "img/client/6.png" %}" alt="..." class="img-circle team-img">
                             <div class="caption">
                                 <h3>목요일</h3>
-                                <p>산소래 연습날</p>
-                                <p>산지니 연습날</p>
+                                <p style="font-size: 15px;">어진바람 연습날</p>
                             </div>
                         </div>
                     </div>
 
+
                     <div class="item">
                         <div class="thumbnail">
-                            <img src="{% static "img/client/3.png" %}" alt="..." class="img-circle team-img">
+                            <img style="float: left;" src="{% static "img/client/5.png" %}" alt="..." class="img-circle team-img">
+                            <img style="float; left;" src="{% static "img/client/4.png" %}" alt="..." class="img-circle team-img">
                             <div class="caption">
                                 <h3>금요일</h3>
-                                <p>어바 연습날</p>
-                                <p>자올 연습날</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div class="thumbnail">
-                            <img src="{% static "img/client/3.png" %}" alt="..." class="img-circle team-img">
-                            <div class="caption">
-                                <h3>토요일</h3>
-                                <p>휴일</p>
+                                <p style="font-size: 15px;">자올소리  연습날</p>
+                                <p style="font-size: 15px;">굴렁쇠 연습날</p>
                                 
                             </div>
                         </div>
@@ -341,10 +293,21 @@
 
                     <div class="item">
                         <div class="thumbnail">
-                            <img src="{% static "img/client/3.png" %}" alt="..." class="img-circle team-img">
+                            <img src="{% static "img/client/kw.png" %}" alt="..." class="img-circle team-img">
+                            <div class="caption">
+                                <h3>토요일</h3>
+                                <p style="font-size: 15px;">휴일</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="thumbnail">
+                            <img src="{% static "img/client/lp.png" %}" alt="..." class="img-circle team-img">
                             <div class="caption">
                                 <h3>일요일</h3>
-                                <p>리버풍 정기 모임<br>매주 오후 6시</p>
+                                <p style="font-size: 15px;">리버풍 정기 모임<br>매주 오후 6시</p>
                                 
                             </div>
                         </div>
@@ -401,8 +364,8 @@
                         <div class="hover-bg">
                             <a href="#">
                                 <div class="hover-text">
-                                    <h4>의장</h4>
-                                    <small>김신복</small>
+                                    <h2>의장</h2><br>
+                                    <p style="font-size: 30px;font-weight: bold;">김신복</p>
                                     <div class="clearfix"></div>
                                     <i class="fa fa-plus"></i>
                                 </div>
@@ -417,8 +380,8 @@
                         <div class="hover-bg">
                             <a href="#">
                                 <div class="hover-text">
-                                    <h4>부의장</h4>
-                                    <small>홍정희</small>
+                                    <h2>부의장</h2><br>
+                                    <p style="font-size: 30px;font-weight: bold;">홍정희 </p>
                                     <div class="clearfix"></div>
                                     <i class="fa fa-plus"></i>
                                 </div>
@@ -433,8 +396,8 @@
                         <div class="hover-bg">
                             <a href="#">
                                 <div class="hover-text">
-                                    <h4>총무</h4>
-                                    <small>예건해</small>
+                                    <h2>총무</h2><br>
+                                    <p style="font-size: 30px;font-weight: bold;">예건해</p>
                                     <div class="clearfix"></div>
                                     <i class="fa fa-plus"></i>
                                 </div>
@@ -450,8 +413,8 @@
                         <div class="hover-bg">
                             <a href="#">
                                 <div class="hover-text">
-                                    <h4>상쇠 </h4>
-                                    <small>조유진</small>
+                                    <h2>상쇠 </h2><br>
+                                    <p style="font-size: 30px;font-weight: bold;">조유진</p>
                                     <div class="clearfix"></div>
                                     <i class="fa fa-plus"></i>
                                 </div>
@@ -466,8 +429,8 @@
                         <div class="hover-bg">
                             <a href="#">
                                 <div class="hover-text">
-                                    <h4>부쇠</h4>
-                                    <small>한예림</small>
+                                    <h2>부쇠</h2><br>
+                                    <p style="font-size: 30px;font-weight: bold;">한예림</p>
                                     <div class="clearfix"></div>
                                     <i class="fa fa-plus"></i>
                                 </div>
@@ -483,8 +446,8 @@
                         <div class="hover-bg">
                             <a href="#">
                                 <div class="hover-text">
-                                    <h4>상장구</h4>
-                                    <small>박용욱</small>
+                                    <h2>상장구</h2><br>
+                                    <p style="font-size: 30px;font-weight: bold;">박용욱</p>
                                     <div class="clearfix"></div>
                                     <i class="fa fa-plus"></i>
                                 </div>
@@ -499,8 +462,8 @@
                         <div class="hover-bg">
                             <a href="#">
                                 <div class="hover-text">
-                                    <h4>수소고</h4>
-                                    <small>정다현</small>
+                                    <h2>수소고</h2><br>
+                                    <p style="font-size: 30px;font-weight: bold;">정다현</p>
                                     <div class="clearfix"></div>
                                     <i class="fa fa-plus"></i>
                                 </div>
@@ -515,8 +478,8 @@
                         <div class="hover-bg">
                             <a href="#">
                                 <div class="hover-text">
-                                    <h4>자올소리 패짱 </h4>
-                                    <small>고강산</small>
+                                    <h2>자올소리 패짱 </h2><br>
+                                    <p style="font-size: 30px;font-weight: bold;">고강산</p>
                                     <div class="clearfix"></div>
                                     <i class="fa fa-plus"></i>
                                 </div>
@@ -531,8 +494,8 @@
                         <div class="hover-bg">
                             <a href="#">
                                 <div class="hover-text">
-                                    <h4>산소래 패짱 </h4>
-                                    <small>김형인</small>
+                                    <h2>산소래 패짱 </h2><br>
+                                    <p style="font-size: 30px;font-weight: bold;">김형인</p>
                                     <div class="clearfix"></div>
                                     <i class="fa fa-plus"></i>
                                 </div>
@@ -547,8 +510,8 @@
                         <div class="hover-bg">
                             <a href="#">
                                 <div class="hover-text">
-                                    <h4>굴렁쇠 패짱 </h4>
-                                    <small>서형렬</small>
+                                    <h2>굴렁쇠 패짱 </h2><br>
+                                    <p style="font-size: 30px;font-weight: bold;">서형렬</p>
                                     <div class="clearfix"></div>
                                     <i class="fa fa-plus"></i>
                                 </div>
@@ -564,8 +527,8 @@
                         <div class="hover-bg">
                             <a href="#">
                                 <div class="hover-text">
-                                    <h4>어진바람 패짱 </h4>
-                                    <small>윤수빈</small>
+                                    <h2>어진바람 패짱 </h2><br>
+                                    <p style="font-size: 30px;font-weight: bold;">윤수빈</p>
                                     <div class="clearfix"></div>
                                     <i class="fa fa-plus"></i>
                                 </div>
@@ -580,8 +543,8 @@
                         <div class="hover-bg">
                             <a href="#">
                                 <div class="hover-text">
-                                    <h4>산지니 패짱 </h4>
-                                    <small>하태화</small>
+                                    <h2>산지니 패짱 </h2><br>
+                                    <p style="font-size: 30px;font-weight: bold;">하태화</p>
                                     <div class="clearfix"></div>
                                     <i class="fa fa-plus"></i>
                                 </div>
@@ -597,8 +560,8 @@
                         <div class="hover-bg">
                             <a href="#">
                                 <div class="hover-text">
-                                    <h4>사통백이 패짱 </h4>
-                                    <small>홍세화</small>
+                                    <h2>사통백이 패짱 </h2><br>
+                                    <p style="font-size: 30px;font-weight: bold;">홍세화</p>
                                     <div class="clearfix"></div>
                                     <i class="fa fa-plus"></i>
                                 </div>
@@ -614,8 +577,8 @@
                         <div class="hover-bg">
                             <a href="#">
                                 <div class="hover-text">
-                                    <h4>난장 패짱 </h4>
-                                    <small>황덕하</small>
+                                    <h2>난장 패짱 </h2><br>
+                                    <p style="font-size: 30px;font-weight: bold;">황덕하</p>
                                     <div class="clearfix"></div>
                                     <i class="fa fa-plus"></i>
                                 </div>
