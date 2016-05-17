@@ -23,6 +23,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^blog/', include('blog.urls', namespace='blog')),
     url(r'^home/', include('home.urls', namespace='home')),
+    url(r'^notice/', include('notice.urls', namespace='notice')),
+    url(r'^accounts/',include('django.contrib.auth.urls')),
     url(r'^$' , lambda r: redirect('blog:index')),
 ]
 

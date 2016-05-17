@@ -1,0 +1,47 @@
+{% extends 'notice/base.html' %}
+
+{% block content %}
+
+
+
+{% load staticfiles %}
+
+    <header class="intro-header" style="background-image: url('{% static "img/about-bg.jpg" %}')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>로그인</h1>
+                        <hr class="small">
+ 					<span class="subheading">
+                     <p style="font-size: 30px;font-weight: bold;">"로그인 하지 않았거나, 권한이 없습니다."</p>
+                     <p style="font-size: 30px;font-weight: bold;">"글을 보거나 혹은 남기시려면 로그인해야 합니다."</p>
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+<div align="center">
+	<div align="left" style="width:500px">
+		<div>
+		    <p style="font-size: 40px;"></p>
+		    <form style="padding-bottom: 20px;" method="POST" class="post-form ">
+		    {% csrf_token %}
+		    <div >
+		    	{{ form.as_p }}
+		    </div>
+		    <a>
+		        <button style="margin-left: 200px;" type="submit" class="save btn btn-primary">로그인</button>
+		    </a>
+		    </form>
+		</div>
+	</div>
+</div>
+    
+{% endblock %}

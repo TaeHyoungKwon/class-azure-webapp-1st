@@ -1,0 +1,62 @@
+
+{% extends "notice/base.html" %}
+
+{% block content %}
+
+
+    <!-- Start header part -->
+    <header class="intro-header" style="background-image: url('../../static/img/about-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>공지사항</h1>
+                        <hr class="small">
+                        <span class="subheading">지나간 공지사항을 확인하세요</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End header part -->
+
+
+  	<div style="padding-bottom: 20px;" class="container">
+  		<div class="row">
+
+<table style="font-weight: bold;" id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+            <tr style="font-size: 25px;" class="danger">
+                <th>ID</th>
+                <th>작성자</th>
+                <th>제목</th>
+                <th>날짜</th>
+                <th>조회수</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+
+        {% for post in post_list %}
+            <tr>
+                <td>{{ post.id }}</td>
+                <td>{{ post.name }}</td>
+                <td>
+                <a href="{% url "notice:post_detail" post.pk %}">
+                    {{ post.title }} 
+                </a>
+                </td> 
+                <td>{{ post.created_at | date:"Y/m/d/D" }}</td>
+                <td>{{ post.hit}}</td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+
+  			
+  		</div>
+  	</div>
+{% endblock %}
