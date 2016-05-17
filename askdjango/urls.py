@@ -18,14 +18,14 @@ from django.conf.urls import include, url
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.shortcuts import redirect
-
+        
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^blog/', include('blog.urls', namespace='blog')),
     url(r'^home/', include('home.urls', namespace='home')),
     url(r'^notice/', include('notice.urls', namespace='notice')),
     url(r'^accounts/',include('django.contrib.auth.urls')),
-    url(r'^$' , lambda r: redirect('blog:index')),
+    url(r'^$' , lambda r: redirect('home:home')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

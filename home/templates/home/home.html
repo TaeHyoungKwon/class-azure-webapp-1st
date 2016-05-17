@@ -7,29 +7,25 @@
     ==========================================-->
     <div id="tf-home" class="text-center">
         <div class="overlay">
-            <div class="content">
+            <div style="padding-top: 200px;">
 
 
-                <p style="margin-bottom: 70px;font-size: 60px; font-weight: bold"> <strong><br> 광운대학교 풍물 굿패 연합</strong></p>
+                <p style="font-size: 60px; font-weight: bold"> <strong><br> 광운대학교 풍물 굿패 연합</strong></p>
 
 
                     <div style="padding-top: 20px;" class="col-md-2 col-md-offset-5">
-                      <button style="min-width: 100%" type="button" class="btn btn-danger">메인 페이지</button>
+                      <button style="min-width: 100%" type="button" class="btn btn-danger"><span style="font-size: 20px;">메인 페이지</span></button>
                     </div>
 
                     <div style="padding-top: 20px;" class="col-md-2 col-md-offset-5">
                     <a href="#tf-about" class="page-scroll">
-                      <button style="min-width: 100%" type="button" class="btn btn-warning">소개 보기</button></a>
+                      <button style="min-width: 100%" type="button" class="btn btn-warning"><span style="font-size: 20px;" >소개 보기</span></button></a>
                     </div>
                  
                
             </div>
         </div>
     </div>
-
-   
-
-
 
 
     <!-- About Us Page
@@ -41,18 +37,20 @@
                     <img src="{% static "img/kwp.jpg" %}" class="img-responsive">
 
                     <div style="padding-top: 20px;" class="col-md-10 ">
-                      <button style="min-width: 100%" type="button" class="btn btn-danger">회원가입</button>
+                    <a href="{% url "home:user_new" %}">
+                      <button style="min-width: 100%" type="button" class="btn btn-danger"><span style="font-size: 20px;" >회원가입</span></button>
+                      </a>
                     </div>
 
                     
                     <div style="padding-top: 20px;" class="col-md-10 ">
                     <a href="/home/rule">
-                      <button style="min-width: 100%" type="button" class="btn btn-warning">회칙보기</button></a>
+                      <button style="min-width: 100%" type="button" class="btn btn-warning"><span style="font-size: 20px;">회칙보기</span></button></a>
                     </div>
 
                     <div style="padding-top: 20px;" class="col-md-10 ">
                     <a href="/home/tree">
-                      <button style="min-width: 100%" type="button" class="btn btn-warning">의장,부의장,상치배 계보</button></a>
+                      <button style="min-width: 100%" type="button" class="btn btn-warning"><span style="font-size: 20px;">의장,부의장,상치배 계보</span></button></a>
                     </div>
 
                  
