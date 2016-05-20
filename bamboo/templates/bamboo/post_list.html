@@ -1,0 +1,276 @@
+{% extends "notice/base.html" %}
+
+{% block content %}
+
+    <header id="header1" class="intro-header" style="background-image: url('../../static/img/2221.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1 style="font-weight: bold;">대나무 숲</h1>
+                        <hr class="small">
+                        <span>"당신의 익명을 보장합니다."</span>
+                    </div>
+
+                    <div align="center">
+                         <a style="font-size: 50px;color: white" class="page-scroll " href="#first">
+                            <i class="glyphicon glyphicon-download"></i>
+                        </a>
+                    </div>  
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+<section id ="first" style="background-color:#E9E9E9 ;" >
+
+
+<style type="text/css">
+
+.myButton1 {
+    -moz-box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+    box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #3cb371), color-stop(1, #3cb371));
+    background:-moz-linear-gradient(top, #b8e356 5%, #a5cc52 100%);
+    background:-webkit-linear-gradient(top, #b8e356 5%, #a5cc52 100%);
+    background:-o-linear-gradient(top, #b8e356 5%, #a5cc52 100%);
+    background:-ms-linear-gradient(top, #b8e356 5%, #a5cc52 100%);
+    background:linear-gradient(to bottom, #b8e356 5%, #a5cc52 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#b8e356', endColorstr='#a5cc52',GradientType=0);
+    background-color:#3cb371;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #83c41a;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #86ae47;
+}
+.myButton1:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #a5cc52), color-stop(1, #b8e356));
+    background:-moz-linear-gradient(top, #a5cc52 5%, #b8e356 100%);
+    background:-webkit-linear-gradient(top, #a5cc52 5%, #b8e356 100%);
+    background:-o-linear-gradient(top, #a5cc52 5%, #b8e356 100%);
+    background:-ms-linear-gradient(top, #a5cc52 5%, #b8e356 100%);
+    background:linear-gradient(to bottom, #a5cc52 5%, #b8e356 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a5cc52', endColorstr='#b8e356',GradientType=0);
+    background-color:#a5cc52;
+}
+.myButton1:active {
+    position:relative;
+    top:1px;
+}
+
+}
+
+</style>
+
+
+<div align="center">
+    <div  class="pagination">
+        <span style="font-size: 40px;font-weight: bold;" class="step-links">
+            
+            {% if object_list.has_previous %}
+                <a class="myButton1"  href="?page={{ object_list.previous_page_number }}{% if request.GET.q %}&q={{request.GET.q}}{% endif %}">    <p style="font-size: 20px;font-weight: bold;">이전 페이지</p>
+                </a>
+            {% endif %}
+
+            <span style="padding-left: 50px;" class="current">
+                Page <span style="font-size: 40px;color:red">{{ object_list.number }}</span> of 
+                <span style="font-size: 50px;padding-right: 50px;"  >{{ object_list.paginator.num_pages }}</span>
+            
+
+            {% if object_list.has_next %}
+                <a class="myButton1"  href="?page={{ object_list.next_page_number }}{% if request.GET.q %}&q={{request.GET.q}}{% endif %}">
+                    <p style="font-siz4e: 20px;font-weight: bold;">다음 페이지</p>
+                </a>
+            {% endif %}
+            </span>
+        </span>
+    </div>
+</div>
+
+
+
+
+
+<div id="main" style="padding: 20px" id="post" class="container">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1 col-md-10 ">
+
+            <a style="min-width: 100%;" class="myButton1" href="{% url 'bamboo:post_new' %}" />
+                <p style="font-size: 35px;font-weight: bold;text-align: center;">글 남기기</p>
+            </a>
+        <div style="padding-top: 30px;" class ="col-lg-8 col-lg-offset-6 ">
+            <form method='GET' action=''>
+
+            <input type='text' name='q' placeholder='Search posts' value='{{request.GET.q}}'/>
+            <input type='submit' value='Search'/>            
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    {% for post in object_list %}
+<div id="main" style="max-width:100%;width: 1100px;padding: 20px" id="post" class="container">        
+            <div class="row">
+                <div  div  class="col-lg-10 col-lg-offset-1 col-sm-10 col-xs-10 col-md-10 ">
+                    <div class="post-preview">
+                       <div id=first style="background-color:white;border:1px solid; border-color:#E9E9E9;border-top:5px solid;border-top-color: #3cb371;padding:30px;
+                                    border-bottom-left-radius: 40px;border-top-left-radius: 30px;" >
+                        <div id="header" align="right">
+
+
+                        {% if user == post.author %}
+
+                            <span style="float:left;" >
+                               조회수 : {{post.hit}}
+                            </span>                     
+
+
+                            <a href="{% url "bamboo:post_edit" post.pk%}">
+                              <button type="button" class="btn btn-default btn-sm">
+                                <span class="glyphicon glyphicon-edit"></span> Edit
+                              </button>
+                            </a>
+
+                            <a href="{% url "bamboo:post_delete" post.pk%}">
+                              <button type="button" class="btn btn-default btn-sm">
+                                <span class="glyphicon glyphicon-remove-sign"></span> Remove
+                              </button>
+                            </a>  
+                       
+
+   
+                        {% else %}
+
+                             <div style="padding-bottom: 20px;" align="left">
+                               조회수 : {{post.hit}}
+                            </div>                       
+              
+
+                         {% endif %}
+
+                        </div>
+                         {% load staticfiles %}
+                        <div id="left_main" style="height:150px; width:100px;margin-right:40px; float:left;">
+                            <img src="{% static "img/people.png"%}" style="width:100px;height: 90px;border-radius: 100px;"/>
+                          <div id="main"></div>
+                          <div id="footer">
+                            <p style="text-align: center;font-size: 25px;padding:10px;font-weight: bold;">{{a.freeboard_user}}</p>
+                            <p></p>
+                          </div>
+                        </div> 
+
+
+                        
+                        <a  href="{% url "bamboo:post_detail" post.pk%}">
+
+                            <h2 style="color: #3cb371" class="post-title">
+                                {{ post.title }}
+                            </h2>
+                        </a>
+                            
+                            <h5 class="post-title">
+                               {{ post.created_date| date:"Y/m/d/D/P" }} | {{ post.created_date|timesince }} ago
+                            </h5>
+
+                            <h4 class="post-subtitle">
+                                {{ post.text|truncatewords:20|linebreaks }}
+                            </h4>
+                            
+                            <div align="right" id="footer">
+                            <a href="#">
+                                <span style="color: red;font-size: 30px" class="glyphicon glyphicon-heart"></span>
+                            </a>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="{% url "bamboo:post_detail" post.pk%}">
+                                <span style=" color: gray;font-size: 30px" class="glyphicon glyphicon-comment">
+                                </span>
+                            </a>
+                               <span style="font-size: 20px;font-weight: bold">{{ post.comments.count }}</span>                                                        
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endfor %}
+
+<div id="main" style="max-width:500px%;padding: 20px" id="post" class="container">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1 col-md-10 ">
+
+            <a style="min-width: 940px;" class="myButton1" href="{% url 'freeboard:post_new' %}" />
+                <p style="font-size: 35px;font-weight: bold;text-align: center;">글 남기기</p>
+            </a>
+
+        </div>
+
+    </div>
+</div>
+
+<div align="center">
+    <div  class="pagination">
+        <span style="font-size: 40px;font-weight: bold;" class="step-links">
+            
+            {% if object_list.has_previous %}
+                <a class="myButton1"  href="?page={{ object_list.previous_page_number }}{% if request.GET.q %}&q={{request.GET.q}}{% endif %}">    <p style="font-size: 20px;font-weight: bold;">이전 페이지</p>
+                </a>
+            {% endif %}
+
+            <span style="padding-left: 50px;" class="current">
+                Page <span style="font-size: 40px;color:red">{{ object_list.number }}</span> of 
+                <span style="font-size: 50px;padding-right: 50px;"  >{{ object_list.paginator.num_pages }}</span>
+            
+
+            {% if object_list.has_next %}
+                <a class="myButton1"  href="?page={{ object_list.next_page_number }}{% if request.GET.q %}&q={{request.GET.q}}{% endif %}">
+                    <p style="font-siz4e: 20px;font-weight: bold;">다음 페이지</p>
+                </a>
+            {% endif %}
+            </span>
+        </span>
+    </div>
+</div>
+
+    <div style="padding-top: 30px" align="center">
+             <a style="font-size: 100px;color: gray" class="page-scroll " href="#first">
+                <i class="glyphicon glyphicon-upload"></i>
+            </a>
+    </div>
+
+</section>
+
+   <!-- jQuery -->
+    <script src="../../static/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../../static/js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../../static/js/clean-blog.min.js"></script>
+
+
+
+
+
+{% endblock content%}

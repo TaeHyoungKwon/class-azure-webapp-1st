@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'blog',
     'home',
     'notice',
+    'freeboard',
+    'bamboo',
 ]
 
 MIDDLEWARE_CLASSES = [

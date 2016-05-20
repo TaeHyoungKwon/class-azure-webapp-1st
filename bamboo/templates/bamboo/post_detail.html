@@ -1,0 +1,261 @@
+
+{% extends "notice/base.html" %}
+
+{% block content %}
+
+
+{% load staticfiles %}
+<header id="header1" class="intro-header" style="background-image: url({% static "img/2221.jpg" %})" >
+    <div class="container" >
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1 style="font-weight: bold;">대나무 숲</h1>
+                    <hr class="small">
+                    <span >"당신의 익명을 보장합니다."</span>
+                </div>
+
+                <div align="center">
+                     <a style="font-size: 50px;color: white" class="page-scroll " href="#detail">
+                        <i class="glyphicon glyphicon-download"></i>
+                    </a>
+                </div>  
+
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<style type="text/css">
+
+.myButton1 {
+    -moz-box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+    box-shadow:inset 0px 1px 0px 0px #d9fbbe;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #3cb371), color-stop(1, #3cb371));
+    background:-moz-linear-gradient(top, #b8e356 5%, #a5cc52 100%);
+    background:-webkit-linear-gradient(top, #b8e356 5%, #a5cc52 100%);
+    background:-o-linear-gradient(top, #b8e356 5%, #a5cc52 100%);
+    background:-ms-linear-gradient(top, #b8e356 5%, #a5cc52 100%);
+    background:linear-gradient(to bottom, #b8e356 5%, #a5cc52 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#b8e356', endColorstr='#a5cc52',GradientType=0);
+    background-color:#3cb371;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #83c41a;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #86ae47;
+}
+.myButton1:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #a5cc52), color-stop(1, #b8e356));
+    background:-moz-linear-gradient(top, #a5cc52 5%, #b8e356 100%);
+    background:-webkit-linear-gradient(top, #a5cc52 5%, #b8e356 100%);
+    background:-o-linear-gradient(top, #a5cc52 5%, #b8e356 100%);
+    background:-ms-linear-gradient(top, #a5cc52 5%, #b8e356 100%);
+    background:linear-gradient(to bottom, #a5cc52 5%, #b8e356 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#a5cc52', endColorstr='#b8e356',GradientType=0);
+    background-color:#a5cc52;
+}
+.myButton1:active {
+    position:relative;
+    top:1px;
+}
+</style>
+
+
+
+
+{% load staticfiles %}
+<section style="background-color: #E9E9E9;">
+  <div  id="detail" class="container-fluid">
+    <div class="row">
+      <div align="center"class="col-lg-12 col-sm-12" >
+        <div style="padding-bottom: 20px; padding-top: 20px">
+          
+          <div align="left"; style=" background-color:white;
+          border-top: 5px solid;max-width: 100%;width:900px;border-top-color: #3cb371;">
+          
+            <h1 style="
+                 margin-left: 20px;
+                 margin-right: 20px;
+                 padding-bottom: 10px;
+                 font-weight:bold;" > 
+                    {{ post.title }} {{post.hit}}
+              </h1>                            
+          </div>
+
+          <div align="left"; style=" background-color:white;height: 30px;
+          max-width: 100%;width:900px;border-bottom: 5px solid white;">
+          
+            <h4 style="
+                float: right;
+                 margin-left: 20px;
+                 margin-right: 20px;
+                 padding-bottom: 10px;
+                 
+                 font-weight:bold;" > 
+                    <span style="padding-left: 20px;float: right;">조회수: {{post.hit}} </span>                 
+                   <span>작성시간 : {{post.created_date | date:"Y/m/d/D/P" }}</span>
+              </h4>                                         
+          </div>
+
+
+          <div align="left"; style="background-color:white;margin-top: 5px;
+          max-width:100%;width:900px;min-height: 150px;border-top: 5px solid;border-top-color: #3cb371;
+          ">
+
+            <div style="padding-top: 20px;padding-bottom: 20px;" align="center">
+                  {% if post.photo %}
+                    <img src="{{post.photo.url}}"/>
+                  {% endif %}             
+            </div>
+
+
+             <h4  style=" 
+
+             margin-left: 30px;
+             margin-right: 30px;
+             margin-bottom: 30px;
+             line-height:200%;
+             font-weight:bold;"
+             >
+
+           {{ post.text|linebreaks }} 
+             </h4>
+
+
+          </div>
+          
+          <div class="row">
+            <div  style="padding-top:20px;" class='col-sm-15' >
+
+              <div class="fb-like" data-width="500" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>  
+
+            </div>
+          </div> 
+
+
+          <div align="left" style="max-width:900px;padding-top:20px ">
+                <a href="{% url "bamboo:post_list" %}" class="myButton1">List</a>
+
+                <a href="{% url "bamboo:comment_new" post.pk %}" class="myButton1">Comments</a>
+         <h3
+           style="
+              margin-right: 30px;
+              margin-top: 20px;
+              margin-bottom: 10px;
+              line-height:200%;">Comments</h3>
+
+
+          </div>
+
+
+         </div>
+
+
+
+      
+       <!-- Each Comment block-->
+
+       
+   {% for comment in post.comments.all %}
+
+ 
+    
+        <!-- Each Comment block-->
+        <div align="center" id="wrap" style="padding-bottom: 10px;border:3px solid;
+        border-top:5px solid blue;min-height:270px;max-width:900px;margin-bottom: 20px;background-color: white;border-top-color: #3cb371;">
+
+            <div id=header style="padding-top:50px;float:right;text-align:right;">
+                    <span style="font-weight: bold;">{{comment.created_at}} | {{ comment.created_at|timesince }} ago</span>
+              </div>
+
+
+
+
+        <div id="header" style="text-align: left;padding-left:20px;padding-top: 20px;padding-right: 10px;">
+
+
+          {% if user == comment.author %}   
+
+            <a href="{% url "bamboo:comment_edit" post.pk comment.pk%}">
+              <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-edit"></span> Edit
+              </button>
+            </a>
+
+            <a href="{% url "bamboo:comment_delete" post.pk comment.pk%}">
+              <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-remove-sign"></span> Remove
+              </button>
+            </a>
+
+          {% else %}
+          <div style="padding-top: 50px;">
+            
+          </div>
+
+          {% endif %}
+
+        </div>
+         
+          <div id="main" style="margin:10px;">
+
+          {% if  not comment.anonymous %}
+            <div id="left_main" style="height:150px; width:100px;margin-right:10px; float:left;">
+                <img src="{% static "img/people.png"%}" style="width:100px;height: 85px;border-radius: 100px;"/>
+             
+              <div id="footer">
+                <p style="text-align: center;font-size: 20px;font-weight: bold;">{{comment.author}}</p>
+              </div>
+            </div>
+
+          {% else %}
+            <div id="left_main" style="height:150px; width:100px;margin-right:10px; float:left;">
+                  <img src="{% static "img/people.png"%}" style="width:100px;height: 85px;border-radius: 100px;"/>
+               
+                <div id="footer">
+                </div>
+              </div>
+          {% endif %}
+            <div id="right_main" style="font-weight: bold;padding: 10px;min-height:140px;width:750px;max-width:100%;background-color:#E9E9E9;float:left;">
+
+
+            
+              <div id=header style="text-align:left;">
+                    {{comment.message | linebreaks }}
+              </div>
+
+
+
+            </div>
+          </div>
+           
+          <div style="clear:both;"></div>
+        </div>
+
+        {% endfor %}   
+
+          <div align="left" style="max-width:900px;padding-top:20px ">
+                <a href="{% url "bamboo:post_list" %}" class="myButton1">List</a>
+
+                <a href="{% url "bamboo:comment_new" post.pk %}" class="myButton1">Comments</a>
+
+          </div>
+   </div>
+  </div>
+</div>
+  
+
+{% endblock %}
+

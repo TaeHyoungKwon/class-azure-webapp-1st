@@ -24,6 +24,8 @@ urlpatterns = [
     url(r'^blog/', include('blog.urls', namespace='blog')),
     url(r'^home/', include('home.urls', namespace='home')),
     url(r'^notice/', include('notice.urls', namespace='notice')),
+    url(r'^freeboard/', include('freeboard.urls', namespace='freeboard')),
+    url(r'^bamboo/', include('bamboo.urls', namespace='bamboo')),
     url(r'^accounts/',include('django.contrib.auth.urls')),
     url(r'^$' , lambda r: redirect('home:home')),
 ]

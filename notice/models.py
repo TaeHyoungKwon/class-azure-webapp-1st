@@ -19,7 +19,6 @@ class Post(models.Model):
 
 class Comment(models.Model):
 	post = models.ForeignKey('notice.Post', related_name='comments')
-	author = models.ForeignKey(settings.AUTH_USER_MODEL,null=True)
 	message = models.TextField()
 	created_at = models.DateTimeField(default=timezone.now)
 

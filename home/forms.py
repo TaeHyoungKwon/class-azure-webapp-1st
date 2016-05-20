@@ -28,6 +28,16 @@ class SignupForm(UserCreationForm):
         ),
     )
 
+    photo = forms.ImageField(
+        required=False,
+        widget=forms.FileInput(
+            attrs={
+            'class': 'form-control',
+            'enctype':"multipart/form-data",
+            }
+            )
+        )
+
 
     email = forms.EmailField(
         required=True,
@@ -63,4 +73,4 @@ class SignupForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ("username", "email", "password1", "password2",)
+        fields = ("username","photo", "email", "password1", "password2",)

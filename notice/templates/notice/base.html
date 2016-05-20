@@ -1,194 +1,231 @@
 <!DOCTYPE html>
-    <html lang="en">
-        <head>
-        {% load staticfiles%}
-            <meta charset="utf-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-            <title>Bootstrap 101 Template</title>
+<html lang="en">
+<head>
+    {% load staticfiles%}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>광운대학교 풍물 굿패 연합</title>
 
-            <!-- Bootstrap -->
-            <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-            <link href="https://cdn.datatables.net/1.10.11/css/dataTables.bootstrap.min.css" rel="stylesheet">
-           
-            <!-- Custom CSS -->
-            <link href="{% static "css/clean-blog.min.css" %}" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.11/css/dataTables.bootstrap.min.css" rel="stylesheet">
 
-            <!-- Custom Fonts -->
-            <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-            <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-            <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Custom CSS -->
+    <link href="{% static "css/clean-blog.min.css" %}" rel="stylesheet">
 
-            <!--Rotating Icon-->
-             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-             <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-
-
-            <style type="text/css">
+    <!--Rotating Icon-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 
 
 
- 
-
+    <style type="text/css">
 
      body{
         font-family: 'Jeju Gothic',Sans-serif;
         font-style: normal;
         font-weight: 700;  
-      }
+    }
 
     body h1{
         font-family: 'Jeju Gothic',Sans-serif;
         font-style: normal;
         font-weight: 700;  
-      }
+    }
     body h2{
         font-family: 'Jeju Gothic',Sans-serif; 
         font-style: normal;
         font-weight: 700; 
-      }     
+    }     
     span{
         font-family: 'Jeju Gothic',Sans-serif; 
         font-style: normal;
         font-weight: 700; 
-      }     
+    }     
 
     body{
         font-family: 'Jeju Gothic',Sans-serif;  
         font-style: normal;
         font-weight: 700;
-      }
+    }
 
     body p{
         font-family: 'Jeju Gothic',Sans-serif;
         font-style: normal;
         font-weight: 700;  
-      }
+    }
     body a{
         font-family: 'Jeju Gothic',Sans-serif; 
         font-style: normal;
         font-weight: 700; 
-      } 
+    } 
+
+
+    .myButton {
+        -moz-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+        -webkit-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+        box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+        background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #378de5));
+        background:-moz-linear-gradient(top, #79bbff 5%, #378de5 100%);
+        background:-webkit-linear-gradient(top, #79bbff 5%, #378de5 100%);
+        background:-o-linear-gradient(top, #79bbff 5%, #378de5 100%);
+        background:-ms-linear-gradient(top, #79bbff 5%, #378de5 100%);
+        background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5',GradientType=0);
+        background-color:#79bbff;
+        -moz-border-radius:6px;
+        -webkit-border-radius:6px;
+        border-radius:6px;
+        border:1px solid #84bbf3;
+        display:inline-block;
+        cursor:pointer;
+        color:#ffffff;
+        font-family:Arial;
+        font-size:15px;
+        font-weight:bold;
+        padding:6px 24px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #528ecc;
+    }
+    .myButton:hover {
+        background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #378de5), color-stop(1, #79bbff));
+        background:-moz-linear-gradient(top, #378de5 5%, #79bbff 100%);
+        background:-webkit-linear-gradient(top, #378de5 5%, #79bbff 100%);
+        background:-o-linear-gradient(top, #378de5 5%, #79bbff 100%);
+        background:-ms-linear-gradient(top, #378de5 5%, #79bbff 100%);
+        background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#378de5', endColorstr='#79bbff',GradientType=0);
+        background-color:#378de5;
+    }
+    .myButton:active {
+        position:relative;
+        top:1px;
+    }     
 
 
 
-                /* Footer */
-                #footer { 
-                    height: auto; 
+    /* Footer */
+    #footer { 
+        height: auto; 
 
-                }
+    }
 
-                .fa{
-                    font-size:24px;
-                    margin-right:5px
-                }
+    .fa{
+        font-size:24px;
+        margin-right:5px
+    }
 
-                .row-first{
-                    margin-bottom:10px;
-                    margin-top:8px
-                }
-                .title-footer{
-                    margin-top:32px;
-                }
+    .row-first{
+        margin-bottom:10px;
+        margin-top:8px
+    }
+    .title-footer{
+        margin-top:32px;
+    }
 
-                a {
-                    transition:all .3s ease;
-                    -webkit-transition:all .3s ease;
-                    -moz-transition:all .3s ease;
-                    -o-transition:all .3s ease
-                }
+    a {
+        transition:all .3s ease;
+        -webkit-transition:all .3s ease;
+        -moz-transition:all .3s ease;
+        -o-transition:all .3s ease
+    }
 
-                .main-footer{
-                    color:#fff;
-                    background-color:#000;
-                    text-align:center;
-                }
+    .main-footer{
+        color:#fff;
+        background-color:#000;
+        text-align:center;
+    }
 
-                .contact a{
-                    display:block;
-                    background-color:#292b34;
-                    font-size:20px;
-                    text-align:center;
-                    color:#fff;
-                    padding:7px;
-                }
+    .contact a{
+        display:block;
+        background-color:#292b34;
+        font-size:20px;
+        text-align:center;
+        color:#fff;
+        padding:7px;
+    }
 
-                .contact a:hover{
-                    background-color:rgba(255,255,255,0.85);
-                    text-decoration:none
-                }
+    .contact a:hover{
+        background-color:rgba(255,255,255,0.85);
+        text-decoration:none
+    }
 
-                .contact a.skype:hover,.fa-skype{
-                    color:#00aff0;
-                }
+    .contact a.skype:hover,.fa-skype{
+        color:#00aff0;
+    }
 
-                .contact a.google:hover,.fa-instagram{
-                    color:#dd4b39;
-                }
+    .contact a.google:hover,.fa-instagram{
+        color:#dd4b39;
+    }
 
-                .contact a.linkedin:hover,.fa-facebook{
-                    color:#0e76a8;
-                }
+    .contact a.linkedin:hover,.fa-facebook{
+        color:#0e76a8;
+    }
 
-                .contact a.twitter:hover,.fa-twitter{
-                    color:#00acee;
-                }
+    .contact a.twitter:hover,.fa-twitter{
+        color:#00acee;
+    }
 
 
 
-                    .dropdown-menu>li>a,
-                .navbar-default .navbar-nav>li>a,
-                .navbar-default .navbar-nav >.active>a,
-                .navbar-default .navbar-header>a,
-                .navbar-default .navbar-nav>.active>a,
-                .navbar-default .navbar-nav .open .dropdown-menu>li>a
-                {
-                    color:gray;
-                    transition:all 1s;
-                    -o-transition:all 1s;
-                    -moz-transition:all 1s;
-                    -webkit-transition:all 1s
-                }
-                .dropdown-menu>li>a:hover,
-                .navbar-default .navbar-nav>li>a:hover,
-                .navbar-default .navbar-nav >.active>a,
-                .navbar-default .navbar-header>a:hover,
-                .navbar-default .navbar-nav>.active>a:hover,
-                .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover
-                {
-                    color:#FFFFFF;
-                    background:#2C3E50
-                }
-                a
-                {
-                    cursor:pointer;
-                }
-                a:hover .fa
-                {
-                    -webkit-animation:fa-spin 1s;animation:fa-spin 1s
-                }
-                .hl-left
-                {
-                    border:1px dotted #5C4383;
-                    border-left:5px solid #5C4383;
-                    padding:30px;
-                    border-radius:10px;
-                    margin-bottom:60px;
-                    background-color:#FBFBFB;
-                }
-                .progress-devider
-                {
-                    width: 11.11111111111111%;
-                }
+    .dropdown-menu>li>a,
+    .navbar-default .navbar-nav>li>a,
+    .navbar-default .navbar-nav >.active>a,
+    .navbar-default .navbar-header>a,
+    .navbar-default .navbar-nav>.active>a,
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a
+    {
+        color:gray;
+        transition:all 1s;
+        -o-transition:all 1s;
+        -moz-transition:all 1s;
+        -webkit-transition:all 1s
+    }
+    .dropdown-menu>li>a:hover,
+    .navbar-default .navbar-nav>li>a:hover,
+    .navbar-default .navbar-nav >.active>a,
+    .navbar-default .navbar-header>a:hover,
+    .navbar-default .navbar-nav>.active>a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a:hover
+    {
+        color:#FFFFFF;
+        background:#2C3E50
+    }
+    a
+    {
+        cursor:pointer;
+    }
+    a:hover .fa
+    {
+        -webkit-animation:fa-spin 1s;animation:fa-spin 1s
+    }
+    .hl-left
+    {
+        border:1px dotted #5C4383;
+        border-left:5px solid #5C4383;
+        padding:30px;
+        border-radius:10px;
+        margin-bottom:60px;
+        background-color:#FBFBFB;
+    }
+    .progress-devider
+    {
+        width: 11.11111111111111%;
+    }
 
 
                 /*
                  * Font Awesome Animation
                  */
-                /* WRENCHING */
-                @keyframes wrench {
+                 /* WRENCHING */
+                 @keyframes wrench {
                     0%{transform:rotate(-12deg)}
                     8%{transform:rotate(12deg)}
                     10%{transform:rotate(24deg)}
@@ -530,189 +567,211 @@
 
             </style>
 
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-          <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-         
-    
-  </head>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+            <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 
 
-  <body>
 
-    <nav style="background-color: black;" class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>                        
-          </button>
-                <a href="{% url "home:home" %}" tabindex="0" class="navbar-brand faa-pulse faa-slow animated" data-toggle="popover" data-trigger="focus" data-html="true" data-placement="bottom" data-title="Brand Quote..." data-content="<img class='img-responsive' height='140' width='140' src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='/<p>Your Brand Image</p>">
-                    <i class="fa fa-barcode"></i>
-                    <i class="fa fa-lg">K</i>
-                    <i class="fa fa-lg">w</i>
-                    <i class="fa fa-lg">P</i>
-                    <i class="fa fa-lg">.</i>
-                    <i class="fa fa-lg">U</i>
-                </a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a class="faa-parent animated-hover">
-                           <i class="fa fa-fw fa-lg fa-home faa-tada faa-fast"></i>메인
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{% url "notice:post_list" %}" class="faa-parent animated-hover">
-                           <i class="fa fa-fw fa-lg fa-thumbs-up faa-tada faa-fast"></i>공지사항
-                        </a>
-                    </li>
+        </head>
 
-                    <li>
-                        <a class="faa-parent animated-hover">
-                           <i class="fa fa-fw fa-lg fa-commenting faa-tada faa-fast"></i>날적이
-                        </a>
-                    </li>
 
-                    <li>
-                        <a class="faa-parent animated-hover">
-                           <i class="fa fa-fw fa-lg fa-question faa-tada faa-fast"></i>대나무숲
-                        </a>
-                    </li>
 
-                    <li>
-                        <a class="faa-parent animated-hover">
-                           <i class="fa fa-fw fa-lg fa-group faa-tada faa-fast"></i>OB놀이터
-                        </a>
-                    </li>
+        <body>
 
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle faa-parent animated-hover" data-toggle="dropdown">
-                           <i class="fa fa-fw fa-lg fa-th faa-tada faa-fast"></i>소모임
-                           <span class="fa fa-caret-down"></span>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                       <li>
-                          <a class="faa-parent animated-hover">
-                             <i class="fa fa-fw fa-heart faa-tada faa-fast"></i>삐로롱뿌로롱
-                          </a>
+            <nav style="background-color: black;" class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>                        
+                    </button>
+                    <a href="{% url "home:home" %}" tabindex="0" class="navbar-brand faa-pulse faa-slow animated" data-toggle="popover" data-trigger="focus" data-html="true" data-placement="bottom" data-title="Brand Quote..." data-content="<img class='img-responsive' height='140' width='140' src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=='/<p>Your Brand Image</p>">
+                        <i class="fa fa-barcode"></i>
+                        <i class="fa fa-lg">K</i>
+                        <i class="fa fa-lg">w</i>
+                        <i class="fa fa-lg">P</i>
+                        <i class="fa fa-lg">.</i>
+                        <i class="fa fa-lg">U</i>
+                    </a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="{% url "notice:post_list" %}" class="faa-parent animated-hover">
+                                <i class="fa fa-fw fa-lg fa-thumbs-up faa-tada faa-fast"></i>공지사항
+                            </a>
+                        </li>                        
+
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle faa-parent animated-hover" data-toggle="dropdown">
+                                <i class="fa fa-fw fa-lg fa-balance-scale faa-tada faa-fast"></i>집행부
+                                <span class="fa fa-caret-down"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a class="faa-parent animated-hover">
+                                        <i class="fa fa-fw fa-book faa-tada faa-fast"></i>회의실
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="faa-parent animated-hover">
+                                        <i class="fa fa-fw fa-won faa-tada faa-fast"></i>풍연장부
+                                    </a>
+                                </li> 
+                            </ul>
+                        </li>
+
+
+
+
+
+                        <li>
+                            <a href="{% url "freeboard:post_list" %}" class="faa-parent animated-hover">
+                                <i class="fa fa-fw fa-lg fa-commenting faa-tada faa-fast"></i>날적이
+                            </a>
+                        </li>
+
+                        <li>
+                        <a href="{% url "bamboo:post_list" %}" class="faa-parent animated-hover">
+                                <i class="fa fa-fw fa-lg fa-question faa-tada faa-fast"></i>대나무숲
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="faa-parent animated-hover">
+                                <i class="fa fa-fw fa-lg fa-camera faa-tada faa-fast"></i>사진첩
+                            </a>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle faa-parent animated-hover" data-toggle="dropdown">
+                                <i class="fa fa-fw fa-lg fa-th faa-tada faa-fast"></i>소모임
+                                <span class="fa fa-caret-down"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a class="faa-parent animated-hover">
+                                        <i class="fa fa-fw fa-heart faa-tada faa-fast"></i>삐로롱뿌로롱
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="faa-parent animated-hover">
+                                        <i class="fa fa-fw fa-music faa-tada faa-fast"></i>풍창
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="faa-parent animated-hover">
+                                        <i class="fa fa-fw fa-futbol-o faa-tada faa-fast"></i>리버풍
+                                    </a>
+                                </li> 
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                    {% if user.is_authenticated %}
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+
+                            <a href="{% url "logout" %}?next=/" class="faa-parent animated-hover">
+                               <i class="fa fa-fw fa-lg fa-sign-out faa-tada faa-fast"></i>{{user}}
+                           </a>
                        </li>
-                       <li>
-                          <a class="faa-parent animated-hover">
-                             <i class="fa fa-fw fa-music faa-tada faa-fast"></i>풍창
-                          </a>
-                       </li>
-                       <li>
-                          <a class="faa-parent animated-hover">
-                             <i class="fa fa-fw fa-futbol-o faa-tada faa-fast"></i>리버풍
-                          </a>
-                       </li> 
-                        </ul>
-                    </li>
+                   </ul>
 
-                </ul>
-
-                {% if user.is_authenticated %}
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-
-                        <a href="{% url "logout" %}?next=/" class="faa-parent animated-hover">
-                           <i class="fa fa-fw fa-lg fa-sign-out faa-tada faa-fast"></i>{{user}} | LogOut
-                        </a>
-                    </li>
-                </ul>
-
-                {% else %}
-                <ul class="nav navbar-nav navbar-right">
+                   {% else %}
+                   <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="{% url "login" %}?next=/" class="faa-parent animated-hover">
                            <i class="fa fa-fw fa-lg fa-sign-in faa-tada faa-fast"></i>LogIn
-                        </a>
-                    </li>
-                </ul>
-                {% endif %}
+                       </a>
+                   </li>
+               </ul>
+               {% endif %}
 
-            </div>
-        </div>
-    </nav>
+           </div>
+       </div>
+   </nav>
 
-{% block content %}
-{% endblock %}
-
-
+   {% block content %}
+   {% endblock %}
 
 
-    <section id="footer" style="background-color:#292b34;">
+
+
+   <section id="footer" style="background-color:#292b34;">
     <div class="container">
         <center style="color:#fff;">
-        <div class="container">
-            <div class="well well-sm main-footer"  style="background-color:#292b34; border:0px">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <h2 class="title-footer">
-                                    Welcome To KwP.U</h2>
-                                                                    <h4>
-                                    <a href="mailto:kwon5604@naver.com">kwon5604@naver.com</a></h4>
-                            </div><!--end .col-md-4-->
-                            <div class="col-md-4 contact-email">
+            <div class="container">
+                <div class="well well-sm main-footer"  style="background-color:#292b34; border:0px">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h2 class="title-footer">
+                                        Welcome To KwP.U</h2>
+                                        <h4>
+                                            <a href="mailto:kwon5604@naver.com">kwon5604@naver.com</a></h4>
+                                        </div><!--end .col-md-4-->
+                                        <div class="col-md-4 contact-email">
 
-                                <h3>
-                                    Made By <span style="color: darkred;">THKwon</span></h3>
+                                            <h3>
+                                                Made By <span style="color: darkred;">THKwon</span></h3>
 
-                                <h3>
-                                    © Copyright KwP.U 2016</h3>  
-                                                                      
-                            </div><!--end .col-md-4 .contact-email-->
+                                                <h3>
+                                                    © Copyright KwP.U 2016</h3>  
 
-                            <div class="col-md-4">
-                                <div class="row contact row-first">
-                                    <div class="col-md-6">
-                                        <a href="https://www.facebook.com/groups/104536536295315/" class="skype"><i class="fa fa-facebook"></i>풍연 페이스북</a>
-                                    </div><!--end .col-md-6-->
+                                                </div><!--end .col-md-4 .contact-email-->
 
-                                    <div class="col-md-6">
-                                        <a href="http://cafe.daum.net/guangpung" class="skype"><i class="fa fa-coffee"></i>풍연 카페</a>
-                                    </div><!--end .col-md-6-->                                    
+                                                <div class="col-md-4">
+                                                    <div class="row contact row-first">
+                                                        <div class="col-md-6">
+                                                            <a href="https://www.facebook.com/groups/104536536295315/" class="skype"><i class="fa fa-facebook"></i>풍연 페이스북</a>
+                                                        </div><!--end .col-md-6-->
 
-                                </div><!--end .row .contact .row-first-->
-                                <div class="row contact">
-                                    <div class="col-md-6">
-                                        <a href="http://www.kw.ac.kr" class="skype"><i class="fa fa-home"></i>광운대학교</a>
-                                    </div><!--end .col-md-6-->
-                                    <div class="col-md-6">
-                                        <a href="http://info.kw.ac.kr" class="skype"><i class="fa fa-info"></i>유캠퍼스</a>
-                                    </div><!--end .col-md-6-->                                    
+                                                        <div class="col-md-6">
+                                                            <a href="http://cafe.daum.net/guangpung" class="skype"><i class="fa fa-coffee"></i>풍연 카페</a>
+                                                        </div><!--end .col-md-6-->                                    
 
-                                </div><!--end .row .contact-->
-                            </div><!--end .col-md-6-->
-                        </div><!--end .row-->
-                    </div><!--end .col-md-12-->
-                </div><!--end .row-->
-            </div><!--end .well .well-sm .main-footer-->
-        </div><!--end .container-->
-        </center>
-    </div><!--end .container-->
-    </section><!--end #footer-->
+                                                    </div><!--end .row .contact .row-first-->
+                                                    <div class="row contact">
+                                                        <div class="col-md-6">
+                                                            <a href="http://www.kw.ac.kr" class="skype"><i class="fa fa-home"></i>광운대학교</a>
+                                                        </div><!--end .col-md-6-->
+                                                        <div class="col-md-6">
+                                                            <a href="http://info.kw.ac.kr" class="skype"><i class="fa fa-info"></i>유캠퍼스</a>
+                                                        </div><!--end .col-md-6-->                                    
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+                                                    </div><!--end .row .contact-->
+                                                </div><!--end .col-md-6-->
+                                            </div><!--end .row-->
+                                        </div><!--end .col-md-12-->
+                                    </div><!--end .row-->
+                                </div><!--end .well .well-sm .main-footer-->
+                            </div><!--end .container-->
+                        </center>
+                    </div><!--end .container-->
+                </section><!--end #footer-->
 
-    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-    $('#example').DataTable();
-} );
+                <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+              
+                <!-- Include all compiled plugins (below), or include individual files as needed -->
+                
 
-    </script>
+                <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+                <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+                <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
+                <script type="text/javascript">
+                    $(document).ready(function() {
+                        $('#example').DataTable();
+                    } );
 
-    </body>
-</html>
+                </script>
+
+            </body>
+            </html>
