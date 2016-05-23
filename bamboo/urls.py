@@ -20,7 +20,7 @@ urlpatterns = [
 
     url(r'^(?P<post_pk>\d+)/comments/new/$', views.comment_new, name='comment_new'),
     url(r'^(?P<post_pk>\d+)/comments/(?P<pk>\d+)/edit/$', views.comment_edit, name='edit_comment'),
-    url(r'^(?P<post_pk>\d+)/comments/(?P<pk>\d+)/delete/$', views.comment_delete, name='comment_delete'),
+    url(r'^(?P<post_pk>\d+)/comments/(?P<pk>\d+)/delete/$', views.comment_delete, name='delete_comment'),
 ]
 
 

@@ -14,13 +14,20 @@
 
 
                     <div style="padding-top: 20px;" class="col-md-2 col-md-offset-5">
-                      <button style="min-width: 100%" type="button" class="btn btn-danger"><span style="font-size: 20px;">메인 페이지</span></button>
+                    <a href="{% url "notice:post_list" %}" class="page-scroll">
+                      <button style="min-width: 100%" type="button" class="btn btn-danger"><span style="font-size: 20px;">메인 페이지</span></button></a>
                     </div>
 
                     <div style="padding-top: 20px;" class="col-md-2 col-md-offset-5">
                     <a href="#tf-about" class="page-scroll">
                       <button style="min-width: 100%" type="button" class="btn btn-warning"><span style="font-size: 20px;" >소개 보기</span></button></a>
                     </div>
+
+                    <div style="padding-top: 20px;" class="col-md-2 col-md-offset-5">
+                        <div class="fb-like" data-href="http://kwpoongyun.azurewebsites.net" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true"></div>
+                    </div>                    
+
+                  
                  
                
             </div>
@@ -34,7 +41,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="{% static "img/kwp.jpg" %}" class="img-responsive">
+                    <img src="{% static "img/logo.jpg" %}" class="img-responsive">
 
                     <div style="padding-top: 20px;" class="col-md-10 ">
                     <a href="{% url "home:user_new" %}">
@@ -65,7 +72,7 @@
                             <hr>
                             <div class="clearfix"></div>
                         </div>
-                        <p class="intro">'광풍연'은 '광운대학교 풍물 굿패 연합'의 약자이고,
+                        <p style="font-size: 20px;" class="intro">'광풍연'은 '광운대학교 풍물 굿패 연합'의 약자이고,
 
                         굴렁쇠, 난장, 사통백이 산지니, 산소래, 어진바람, 자올소리 등
 
@@ -100,7 +107,7 @@
 
     <!-- Services Section
     ==========================================-->
-    <div id="tf-services" class="text-center">
+    <div style="background-color: #E9E9E9;" id="tf-services" class="text-center">
         <div class="container">
             <div class="section-title center">
                 <h2>광풍연 <strong>주요 행사 소개</strong></h2>
@@ -294,12 +301,12 @@
                 <div class="col-sm-6 col-md-3 col-lg-3  uijang jipboo">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="#">
+                            <a href="https://www.facebook.com/profile.php?id=100001834480422&fref=ts">
                                 <div class="hover-text">
                                     <h2>의장</h2><br>
                                     <p style="font-size: 30px;font-weight: bold;">김신복</p>
                                     <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
+                                    
                                 </div>
                                 <img src="https://scontent.xx.fbcdn.net/v/t1.0-1/12313828_1002569796480827_5530869514302179245_n.jpg?oh=5fbaf957b597f06cc8e74807f3dca2d4&oe=57ADB0A9" class="img-responsive" alt="...">
                             </a>
@@ -310,12 +317,12 @@
                 <div class="col-sm-6 col-md-3 col-lg-3  boouijang jipboo">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="#">
+                            <a href="https://www.facebook.com/profile.php?id=100004639205069&fref=ts">
                                 <div class="hover-text">
                                     <h2>부의장</h2><br>
                                     <p style="font-size: 30px;font-weight: bold;">홍정희 </p>
                                     <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
+                                    
                                 </div>
                                 <img src="https://scontent.xx.fbcdn.net/t31.0-1/c0.0.960.960/p960x960/12916315_603608036470498_8784283317590511863_o.jpg" class="img-responsive" alt="...">
                             </a>
@@ -331,7 +338,7 @@
                                     <h2>총무</h2><br>
                                     <p style="font-size: 30px;font-weight: bold;">예건해</p>
                                     <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
+                                    
                                 </div>
                                 <img src="https://scontent.xx.fbcdn.net/v/t1.0-9/11998982_859854994110974_2094013803777287928_n.jpg?oh=718340c915b6921ef3acb61934035a09&oe=57E808A9" class="img-responsive" alt="...">
                             </a>
@@ -343,12 +350,12 @@
                 <div class="col-sm-6 col-md-3 col-lg-3 sangchibae">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="#">
+                            <a href="https://www.facebook.com/profile.php?id=100003606393179&fref=ts">
                                 <div class="hover-text">
                                     <h2>상쇠 </h2><br>
                                     <p style="font-size: 30px;font-weight: bold;">조유진</p>
                                     <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
+                                    
                                 </div>
                                 <img src="https://scontent.xx.fbcdn.net/v/t1.0-9/11037321_603508039779404_3812818698065009809_n.jpg?oh=e46460409d8a1f7e08af418f1dfe4bd0&oe=57D9DE9D" class="img-responsive" alt="...">
                             </a>
@@ -359,12 +366,12 @@
                 <div class="col-sm-6 col-md-3 col-lg-3 sangchibae">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="#">
+                            <a href="https://www.facebook.com/profile.php?id=100006428379042&fref=ts">
                                 <div class="hover-text">
                                     <h2>부쇠</h2><br>
                                     <p style="font-size: 30px;font-weight: bold;">한예림</p>
                                     <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
+                                    
                                 </div>
                                 <img src="https://scontent.xx.fbcdn.net/v/t1.0-9/12729384_1970962363128024_2410557882041050682_n.jpg?oh=54e5ccc9ec1d7ef071b942e1ab19f9d5&oe=57D9659F" class="img-responsive" alt="...">
                             </a>
@@ -376,12 +383,12 @@
                 <div class="col-sm-6 col-md-3 col-lg-3 sangchibae">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="#">
+                            <a href="https://www.facebook.com/profile.php?id=100006314467616&fref=ts">
                                 <div class="hover-text">
                                     <h2>상장구</h2><br>
                                     <p style="font-size: 30px;font-weight: bold;">박용욱</p>
                                     <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
+                                    
                                 </div>
                                 <img src="https://scontent.xx.fbcdn.net/v/t1.0-1/1507785_1646216515598815_2799709011286319780_n.jpg?oh=ba8a90881f01fec0a9745579a574e09f&oe=57AD0D43" class="img-responsive" alt="...">
                             </a>
@@ -392,14 +399,14 @@
                 <div class="col-sm-6 col-md-3 col-lg-3 sangchibae">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="#">
+                            <a href="https://www.facebook.com/profile.php?id=100004835948756&fref=ts">
                                 <div class="hover-text">
                                     <h2>수소고</h2><br>
                                     <p style="font-size: 30px;font-weight: bold;">정다현</p>
                                     <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
+                                    
                                 </div>
-                                <img src="https://scontent.xx.fbcdn.net/v/t1.0-9/12003895_472513049586556_363827798061473854_n.jpg?oh=1d48274729858f16473ad579824a1a0e&oe=57E1E74C" class="img-responsive" alt="...">
+                                <img src="{% static "img/client/dahyun.jpg" %}" alt="..." class="img-responsive">
                             </a>
                         </div>
                     </div>
@@ -408,12 +415,12 @@
                 <div class="col-sm-6 col-md-3 col-lg-3 jipboo">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="#">
+                            <a href="https://www.facebook.com/profile.php?id=100003558714228&fref=ts">
                                 <div class="hover-text">
                                     <h2>자올소리 패짱 </h2><br>
                                     <p style="font-size: 30px;font-weight: bold;">고강산</p>
                                     <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
+                                    
                                 </div>
                                 <img src="https://scontent.xx.fbcdn.net/v/t1.0-9/12814720_807069569421659_8366397360004432951_n.jpg?oh=e5b625b03e1a5739be37919403b2fc09&oe=57AAC79D" class="img-responsive" alt="...">
                             </a>
@@ -424,12 +431,12 @@
                 <div class="col-sm-6 col-md-3 col-lg-3 jipboo ">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="#">
+                            <a href="https://www.facebook.com/profile.php?id=100005075610541&fref=ts">
                                 <div class="hover-text">
                                     <h2>산소래 패짱 </h2><br>
                                     <p style="font-size: 30px;font-weight: bold;">김형인</p>
                                     <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
+                                    
                                 </div>
                                 <img src="https://scontent.xx.fbcdn.net/v/t1.0-9/10983308_382562538589597_2445243305186296226_n.jpg?oh=98417f95f3169b97f47717d4ecfe4e0c&oe=57DF5F02" class="img-responsive" alt="...">
                             </a>
@@ -440,12 +447,12 @@
                 <div class="col-sm-6 col-md-3 col-lg-3 jipboo">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="#">
+                            <a href="https://www.facebook.com/profile.php?id=100003569134606&fref=ts">
                                 <div class="hover-text">
                                     <h2>굴렁쇠 패짱 </h2><br>
                                     <p style="font-size: 30px;font-weight: bold;">서형렬</p>
                                     <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
+                                    
                                 </div>
                                 <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xtp1/t31.0-1/c282.0.960.960/p960x960/10506738_10150004552801856_220367501106153455_o.jpg" class="img-responsive" alt="...">
                             </a>
@@ -457,12 +464,12 @@
                 <div class="col-sm-6 col-md-3 col-lg-3 jipboo ">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="#">
+                            <a href="https://www.facebook.com/profile.php?id=100010642217017&fref=ts">
                                 <div class="hover-text">
                                     <h2>어진바람 패짱 </h2><br>
                                     <p style="font-size: 30px;font-weight: bold;">윤수빈</p>
                                     <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
+                                    
                                 </div>
                                 <img src="https://scontent.xx.fbcdn.net/v/t1.0-9/12316415_138735989824474_1429185430812721639_n.jpg?oh=08074723945ed969f15986d851ac3e23&oe=57E59AC7" class="img-responsive" alt="...">
                             </a>
@@ -473,12 +480,12 @@
                 <div class="col-sm-6 col-md-3 col-lg-3 jipboo">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="#">
+                            <a href="https://www.facebook.com/profile.php?id=100005325930750&fref=ts">
                                 <div class="hover-text">
                                     <h2>산지니 패짱 </h2><br>
                                     <p style="font-size: 30px;font-weight: bold;">하태화</p>
                                     <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
+                                    
                                 </div>
                                 <img src="https://scontent.xx.fbcdn.net/v/t1.0-1/c0.120.720.720/12289664_486930251494502_6070647247094918936_n.jpg?oh=8a4963647252c197fd509e5cd67a2137&oe=57DE8E28" class="img-responsive" alt="...">
                             </a>
@@ -490,12 +497,12 @@
                 <div class="col-sm-6 col-md-3 col-lg-3 jipboo">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="#">
+                            <a href="https://www.facebook.com/sehwa.hong.75?fref=ts">
                                 <div class="hover-text">
                                     <h2>사통백이 패짱 </h2><br>
                                     <p style="font-size: 30px;font-weight: bold;">홍세화</p>
                                     <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
+                                    
                                 </div>
                                 <img src="https://scontent.xx.fbcdn.net/v/t1.0-9/12715655_982260321854766_5213937750607328132_n.jpg?oh=5d50e6e519963b986d34f2ad9952c6c9&oe=579CCEBB" class="img-responsive" alt="...">
                             </a>
@@ -507,12 +514,12 @@
                 <div class="col-sm-6 col-md-3 col-lg-3 jipboo">
                     <div class="portfolio-item">
                         <div class="hover-bg">
-                            <a href="#">
+                            <a href="https://www.facebook.com/profile.php?id=100004899933194&fref=ts">
                                 <div class="hover-text">
                                     <h2>난장 패짱 </h2><br>
                                     <p style="font-size: 30px;font-weight: bold;">황덕하</p>
                                     <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
+                                    
                                 </div>
                                 <img src="https://scontent.xx.fbcdn.net/v/t1.0-9/12049650_571627523010574_7595132350838149275_n.jpg?oh=d07d4de53f7c9f8df87b7b42d55c2cac&oe=57B0EC66" class="img-responsive" alt="...">
                             </a>

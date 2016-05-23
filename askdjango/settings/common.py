@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'notice',
     'freeboard',
     'bamboo',
+    'meeting',
+    'money',
 ]
 
 MIDDLEWARE_CLASSES = [

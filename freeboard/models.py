@@ -33,8 +33,8 @@ class Post(models.Model):
 
 class Comment(models.Model):
 	post = models.ForeignKey('freeboard.Post', related_name='comments')
-	author = models.ForeignKey(settings.AUTH_USER_MODEL,blank=True,null=True, related_name='comments_author')
-	#comment_user = models.ForeignKey(settings.AUTH_USER_MODEL,null=True)
+	#author = models.ForeignKey(settings.AUTH_USER_MODEL,null=True, related_name='comments_author')
+	comment_user = models.ForeignKey(settings.AUTH_USER_MODEL,null=True, related_name='comments_author')
 	comment_message = models.TextField()
 	comment_created_date = models.DateTimeField(default=timezone.now)
 

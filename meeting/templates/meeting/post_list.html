@@ -1,0 +1,206 @@
+{% extends "notice/base.html" %}
+
+{% block content %}
+
+
+{% load staticfiles %}
+
+<!-- Start header part -->
+<header class="intro-header" style="background-image: url('../../static/img/about-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>날적이</h1>
+                    <hr class="small">
+                    <span class="subheading">'날마다 적는 이야기'</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- End header part -->
+
+
+<style type="text/css">
+
+    @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,700,400italic);
+
+    font-family: 'Open Sans', sans-serif;
+
+
+    body {
+      min-height: 3000px;
+      padding-top: 70px;
+      font-family: 'Open Sans', sans-serif;
+  }
+
+  .thumbnail {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 20px;
+}
+
+.thumbnail img {
+    width: 100%;
+} 
+
+
+.myButton {
+  -moz-box-shadow:inset 0px 1px 0px 0px #fbafe3;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #fbafe3;
+  box-shadow:inset 0px 1px 0px 0px #fbafe3;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ff5bb0), color-stop(1, #ef027d));
+  background:-moz-linear-gradient(top, #ff5bb0 5%, #ef027d 100%);
+  background:-webkit-linear-gradient(top, #ff5bb0 5%, #ef027d 100%);
+  background:-o-linear-gradient(top, #ff5bb0 5%, #ef027d 100%);
+  background:-ms-linear-gradient(top, #ff5bb0 5%, #ef027d 100%);
+  background:linear-gradient(to bottom, #ff5bb0 5%, #ef027d 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bb0', endColorstr='#ef027d',GradientType=0);
+  background-color:#ff5bb0;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:1px solid #ee1eb5;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  font-weight:bold;
+  padding:6px 24px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #c70067;
+}
+.myButton:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ef027d), color-stop(1, #ff5bb0));
+  background:-moz-linear-gradient(top, #ef027d 5%, #ff5bb0 100%);
+  background:-webkit-linear-gradient(top, #ef027d 5%, #ff5bb0 100%);
+  background:-o-linear-gradient(top, #ef027d 5%, #ff5bb0 100%);
+  background:-ms-linear-gradient(top, #ef027d 5%, #ff5bb0 100%);
+  background:linear-gradient(to bottom, #ef027d 5%, #ff5bb0 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ef027d', endColorstr='#ff5bb0',GradientType=0);
+  background-color:#ef027d;
+}
+.myButton:active {
+  position:relative;
+  top:1px;
+
+</style>
+
+    <div align="center">
+        <div  class="pagination">
+            <span style="font-size: 40px;font-weight: bold;" class="step-links">
+
+                {% if object_list.has_previous %}
+                <a class="myButton"  href="?page={{ object_list.previous_page_number }}{% if request.GET.q %}&q={{request.GET.q}}{% endif %}">    <p style="font-size: 20px;font-weight: bold;">이전 페이지</p>
+                </a>
+                {% endif %}
+
+                <span style="padding-left: 50px;" class="current">
+                    Page <span style="font-size: 40px;color:red">{{ object_list.number }}</span> of 
+                    <span style="font-size: 50px;padding-right: 50px;"  >{{ object_list.paginator.num_pages }}</span>
+
+
+                    {% if object_list.has_next %}
+                    <a class="myButton"  href="?page={{ object_list.next_page_number }}{% if request.GET.q %}&q={{request.GET.q}}{% endif %}">
+                        <p style="font-size: 20px;font-weight: bold;">다음 페이지</p>
+                    </a>
+                    {% endif %}
+                </span>
+            </span>
+        </div>
+    </div>
+
+    <div id="main" style="padding: 20px" id="post" class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-8 ">
+
+                <a style="min-width: 100%;" class="myButton" href="{% url 'meeting:post_new' %}" />
+                <p style="font-size: 35px;font-weight: bold;text-align: center;">글 남기기</p>
+            </a>
+
+            </div>
+
+            <div style="padding-top: 30px;" class ="col-lg-8 col-lg-offset-8 ">
+                <form method='GET' action=''>
+
+                    <input type='text' name='q' placeholder='Search posts' value='{{request.GET.q}}'/>
+                    <input type='submit' value='Search'/>            
+            </div>
+
+
+        </div>
+    </div>
+
+
+<div class="container">
+    <div class="row">
+
+    {% for post in object_list %}
+        <div style="padding-top: 30px;" class="col-xs-18 col-sm-6 col-md-3">
+            <div  style="max-height: 400px;border-top: 5px solid #ff5bb0;" class="thumbnail">
+
+            {% if user == post.user %}
+
+                <div style="text-align: right;">
+
+                    <a href="{% url "meeting:post_edit" post.pk%}">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+
+                    <a href="{% url "meeting:post_delete" post.pk%}">
+                        <i class="fa fa-close" aria-hidden="true"></i>
+                    </a>
+
+                </div>
+            {% else %}
+
+                <div style="padding-bottom: 28px;"></div>
+            {% endif %}
+
+                    <div class="caption">
+
+                        <h4>{{ post.title }}</h4>
+                        <p>{{post.message|truncatewords:5|linebreaks }}</p>
+
+                        <p>
+                            <a style="border: 3px solid #ff5bb0;min-width: 100%;" href="{% url "meeting:post_detail" post.pk%}" class="btn btn-default btn-xs" role="button">게시글 보기</a>                    
+                        </p>
+                        <hr>
+
+
+                        <i style="font-size: 20px;font-weight: bold;" class="fa fa-eye" aria-hidden="true"> {{post.hit}} | </i>
+
+                        <a href="#">
+                            <i class="fa fa-comment" aria-hidden="true"></i>
+                        </a>
+                        <span style="font-size: 20px;font-weight: bold">{{ post.meeting_comments.count }}</span>                    
+
+
+                    </div>
+                    <div>
+                        <span style="font-size: 15px;">
+                        {{ post.created_date | date:"Y/m/d/P"}} |</span>
+                        <span style="font-size:20px;"> {{post.user}}</span>
+                    </div>                
+                </div>
+            </div>
+    {% endfor %}
+
+
+
+
+
+
+    </div><!-- End row -->
+</div><!-- End container -->
+
+        {% endblock %}
+
+
+
+
+
+
+
+

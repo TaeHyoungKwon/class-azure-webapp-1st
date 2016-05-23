@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <header id="header1" class="intro-header" style="background-image: url('../../static/img/2221.jpg')">
+    <header id="header1" class="intro-header" style="background-image: url('../../static/img/about-bg.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -134,48 +134,12 @@
                        <div id=first style="background-color:white;border:1px solid; border-color:#E9E9E9;border-top:5px solid;border-top-color: #3cb371;padding:30px;
                                     border-bottom-left-radius: 40px;border-top-left-radius: 30px;" >
                         <div id="header" align="right">
-
-
-                        {% if user == post.author %}
-
-                            <span style="float:left;" >
-                               조회수 : {{post.hit}}
-                            </span>                     
-
-
-                            <a href="{% url "bamboo:post_edit" post.pk%}">
-                              <button type="button" class="btn btn-default btn-sm">
-                                <span class="glyphicon glyphicon-edit"></span> Edit
-                              </button>
-                            </a>
-
-                            <a href="{% url "bamboo:post_delete" post.pk%}">
-                              <button type="button" class="btn btn-default btn-sm">
-                                <span class="glyphicon glyphicon-remove-sign"></span> Remove
-                              </button>
-                            </a>  
-                       
-
-   
-                        {% else %}
-
                              <div style="padding-bottom: 20px;" align="left">
                                조회수 : {{post.hit}}
-                            </div>                       
-              
-
-                         {% endif %}
+                            </div>                      
 
                         </div>
                          {% load staticfiles %}
-                        <div id="left_main" style="height:150px; width:100px;margin-right:40px; float:left;">
-                            <img src="{% static "img/people.png"%}" style="width:100px;height: 90px;border-radius: 100px;"/>
-                          <div id="main"></div>
-                          <div id="footer">
-                            <p style="text-align: center;font-size: 25px;padding:10px;font-weight: bold;">{{a.freeboard_user}}</p>
-                            <p></p>
-                          </div>
-                        </div> 
 
 
                         

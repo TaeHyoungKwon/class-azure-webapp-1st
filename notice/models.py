@@ -21,6 +21,6 @@ class Comment(models.Model):
 	post = models.ForeignKey('notice.Post', related_name='comments')
 	message = models.TextField()
 	created_at = models.DateTimeField(default=timezone.now)
-
+	author = models.ForeignKey(settings.AUTH_USER_MODEL,blank=True,null=True,related_name='notice_comment_author')
 	def get_absolute_url(self):
 		return reverse('notice:post_detail', args=[self.post_id])
