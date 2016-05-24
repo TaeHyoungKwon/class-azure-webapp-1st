@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'bamboo',
     'meeting',
     'money',
+    'mainpage',
 ]
 
 MIDDLEWARE_CLASSES = [

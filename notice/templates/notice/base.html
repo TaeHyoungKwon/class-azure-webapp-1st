@@ -583,6 +583,16 @@
 
         <body>
 
+
+        <div id="fb-root"></div>
+            <script>(function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.6&appId=959672924115373";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+
             <nav style="background-color: black;" class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
@@ -629,7 +639,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{% url "meeting:post_list"%}" class="faa-parent animated-hover">
+                                    <a href="{% url "money:post_list"%}" class="faa-parent animated-hover">
                                         <i class="fa fa-fw fa-won faa-tada faa-fast"></i>풍연장부
                                     </a>
                                 </li> 
@@ -726,7 +736,7 @@
 
 
 
-   <section id="footer" style="background-color:black;">
+   <section id="footer" style="margin-top: 50px;background-color:black;">
     <div class="container">
         <center style="color:#fff;">
             <div class="container">

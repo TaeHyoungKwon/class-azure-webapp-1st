@@ -28,15 +28,21 @@ class SignupForm(UserCreationForm):
         ),
     )
 
-    photo = forms.ImageField(
-        required=False,
-        widget=forms.FileInput(
+    nickname = forms.RegexField(
+        max_length=20,
+        regex=r'^[\w.@+-]+$',
+        error_messages={
+            'invalid': "This value may contain only letters, numbers and "
+                         "@/./+/-/_ characters."
+        },
+        widget=forms.TextInput(
             attrs={
-            'class': 'form-control',
-            'enctype':"multipart/form-data",
+                'class': 'form-control',
+                'placeholder': 'Username',
+                'required': 'True',
             }
-            )
-        )
+        ),
+    )
 
 
     email = forms.EmailField(
@@ -73,4 +79,4 @@ class SignupForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ("username","photo", "email", "password1", "password2",)
+        fields = ("username","nickname", "email", "password1", "password2",)

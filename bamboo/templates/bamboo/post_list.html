@@ -2,14 +2,14 @@
 
 {% block content %}
 
-    <header id="header1" class="intro-header" style="background-image: url('../../static/img/about-bg.jpg')">
+    <header id="header1" class="intro-header" style="background-image: url('../../static/img/bamboo.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
                         <h1 style="font-weight: bold;">대나무 숲</h1>
                         <hr class="small">
-                        <span>"당신의 익명을 보장합니다."</span>
+                        <span>'당신의 익명을 보장합니다.'</span>
                     </div>
 
                     <div align="center">
@@ -108,7 +108,7 @@
 
 <div id="main" style="padding: 20px" id="post" class="container">
     <div class="row">
-        <div class="col-lg-10 col-lg-offset-1 col-md-10 ">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 ">
 
             <a style="min-width: 100%;" class="myButton1" href="{% url 'bamboo:post_new' %}" />
                 <p style="font-size: 35px;font-weight: bold;text-align: center;">글 남기기</p>
@@ -127,7 +127,7 @@
 
 
     {% for post in object_list %}
-<div id="main" style="max-width:100%;width: 1100px;padding: 20px" id="post" class="container">        
+<div id="main" style="max-width:100%;width: 800px;padding: 20px" id="post" class="container">        
             <div class="row">
                 <div  div  class="col-lg-10 col-lg-offset-1 col-sm-10 col-xs-10 col-md-10 ">
                     <div class="post-preview">
@@ -157,18 +157,18 @@
                             <h4 class="post-subtitle">
                                 {{ post.text|truncatewords:20|linebreaks }}
                             </h4>
-                            
+
                             <div align="right" id="footer">
-                            <a href="#">
-                                <span style="color: red;font-size: 30px" class="glyphicon glyphicon-heart"></span>
-                            </a>
-                            &nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="{% url "bamboo:post_detail" post.pk%}">
-                                <span style=" color: gray;font-size: 30px" class="glyphicon glyphicon-comment">
-                                </span>
-                            </a>
-                               <span style="font-size: 20px;font-weight: bold">{{ post.comments.count }}</span>                                                        
+                                 <a href="#">
+                                        <i style="color: red;font-size: 25px;" class="fa fa-heart" aria-hidden="true"></i>
+                                </a>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="{% url "bamboo:post_detail" post.pk%}">
+                                        <i style="font-size: 30px;" class="fa fa-comment" aria-hidden="true"></i>
+                                </a>
+                                <span style="font-size: 20px;font-weight: bold">{{ post.comments.count }}</span>                                                        
                             </div>
+
                         </div>
 
 
@@ -179,16 +179,15 @@
 
 {% endfor %}
 
-<div id="main" style="max-width:500px%;padding: 20px" id="post" class="container">
+<div id="main" style="padding: 20px" id="post" class="container">
     <div class="row">
-        <div class="col-lg-10 col-lg-offset-1 col-md-10 ">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 ">
 
-            <a style="min-width: 940px;" class="myButton1" href="{% url 'freeboard:post_new' %}" />
+            <a style="min-width: 100%;" class="myButton1" href="{% url 'bamboo:post_new' %}" />
                 <p style="font-size: 35px;font-weight: bold;text-align: center;">글 남기기</p>
             </a>
 
         </div>
-
     </div>
 </div>
 

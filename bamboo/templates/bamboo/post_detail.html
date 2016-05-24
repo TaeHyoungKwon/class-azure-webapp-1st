@@ -187,19 +187,26 @@
 </style>
 
 <!-- Start header part -->
-<header class="intro-header" style="background-image: url('../../static/img/about-bg.jpg')">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="site-heading">
-          <h1>공지사항</h1>
-          <hr class="small">
-          <span class="subheading">지나간 공지사항을 확인하세요</span>
+    <header id="header1" class="intro-header" style="background-image: url('../../static/img/bamboo.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1 style="font-weight: bold;">대나무 숲</h1>
+                        <hr class="small">
+                        <span>'당신의 익명을 보장합니다.'</span>
+                    </div>
+
+                    <div align="center">
+                         <a style="font-size: 50px;color: white" class="page-scroll " href="#detail">
+                            <i class="glyphicon glyphicon-download"></i>
+                        </a>
+                    </div>  
+
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</header>
+    </header>
 <!-- End header part -->
 
 
@@ -234,6 +241,14 @@
 
     <div align="left"; style="background-color:white;margin-top: 5px;
     max-width:100%;width:900px;min-height: 150px;border-top: 5px solid #3cb371;padding-bottom: 10px;">
+
+    <div style="padding-top: 20px;padding-bottom: 20px;" align="center">
+      {% if post.photo %}
+      <img style="max-width:700px;" src="{{post.photo.url}}"/>
+      {% endif %}             
+    </div>
+
+    
     <h4  style=" 
     margin-left: 30px;
     margin-right: 30px;

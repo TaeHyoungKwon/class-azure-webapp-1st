@@ -28,7 +28,7 @@
 	<div align="left" style="width:500px">
 		<div class="form-group">
 			<p style="font-size: 40px;"></p>
-			<form style="padding-bottom: 20px;" method="POST" class="post-form ">
+			<form style="padding-bottom: 20px;" method="POST" class="post-form "enctype="multipart/form-data">
 				{% csrf_token %}
 				<div style="font-size: 30px;">
 					{{ form.as_p }}

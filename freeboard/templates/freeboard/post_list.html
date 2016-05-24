@@ -5,19 +5,26 @@
 {% load staticfiles %}
 
 <!-- Start header part -->
-<header class="intro-header" style="background-image: url('../../static/img/about-bg.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>날적이</h1>
-                    <hr class="small">
-                    <span class="subheading">'날마다 적는 이야기'</span>
+    <header id="header1" class="intro-header" style="background-image: url('../../static/img/freeboard.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1 style="font-weight: bold;">날 적 이</h1>
+                        <hr class="small">
+                        <span>'하고싶은말 자유롭게 하세요'</span>
+                    </div>
+
+                    <div align="center">
+                         <a style="font-size: 50px;color: white" class="page-scroll " href="#first">
+                            <i class="glyphicon glyphicon-download"></i>
+                        </a>
+                    </div>  
+
                 </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 <!-- End header part -->
 
 
@@ -56,7 +63,7 @@
 
     <div id="main" style="padding: 20px" id="post" class="container">
         <div class="row">
-            <div class="col-lg-10 col-lg-offset-1 col-md-10 ">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 ">
 
                 <a style="min-width: 100%;" class="myButton" href="{% url 'freeboard:post_new' %}" />
                 <p style="font-size: 35px;font-weight: bold;text-align: center;">글 남기기</p>
@@ -81,7 +88,7 @@
     </div>
 
     {% for post in object_list %}
-    <div id="main" style="max-width:100%;width: 1100px;padding: 20px" id="post" class="container">        
+    <div id="main" style="max-width:100%;width: 800px;padding: 20px" id="post" class="container">        
         <div class="row">
             <div  div  class="col-lg-10 col-lg-offset-1 col-md-10 ">
                 <div class="post-preview">
@@ -113,7 +120,7 @@
             {% else %}
 
             <div style="padding-bottom: 20px;" align="left">
-               <span style="font-size: 30px;font-weight: bold;">{{post.user}}</span> | 조회수 : {{post.hit}}
+               <span style="font-size: 20px;font-weight: bold;">{{post.user}}</span> | 조회수 : {{post.hit}}
            </div>                       
 
 
@@ -141,12 +148,11 @@
 
     <div align="right" id="footer">
          <a href="#">
-            <span style="color: red;font-size: 30px" class="glyphicon glyphicon-heart"></span>
+                <i style="color: red;font-size: 25px;" class="fa fa-heart" aria-hidden="true"></i>
         </a>
         &nbsp;&nbsp;&nbsp;&nbsp;
         <a href="{% url "freeboard:post_detail" post.pk%}">
-            <span style=" color: gray;font-size: 30px" class="glyphicon glyphicon-comment">
-            </span>
+                <i style="font-size: 30px;" class="fa fa-comment" aria-hidden="true"></i>
         </a>
         <span style="font-size: 20px;font-weight: bold">{{ post.comments.count }}</span>                                                        
     </div>                            
@@ -162,15 +168,17 @@
 
 {% endfor %}
 
-<div id="main" style="max-width:500px%;padding: 20px" id="post" class="container">
-    <div class="row">
-        <div class="col-lg-10 col-lg-offset-1 col-md-10 ">
+    <div id="main" style="padding: 20px" id="post" class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 ">
 
-            <a style="min-width: 940px;" class="myButton" href="{% url 'freeboard:post_new' %}" />
-            <p style="font-size: 35px;font-weight: bold;text-align: center;">글 남기기</p></a>
+                <a style="min-width: 100%;" class="myButton" href="{% url 'freeboard:post_new' %}" />
+                <p style="font-size: 35px;font-weight: bold;text-align: center;">글 남기기</p>
+            </a>
+
+            </div>
         </div>
     </div>
-</div>
 
 <div align="center">
     <div  class="pagination">

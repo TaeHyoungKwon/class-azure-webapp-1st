@@ -76,7 +76,6 @@ class PostCreateView(CreateView):
         return super(PostCreateView, self).form_valid(form)
 
 
-
 post_new = PostCreateView.as_view(model=Post, form_class=PostForm,template_name='freeboard/add_post.html')
 post_edit = UpdateView.as_view(model=Post, form_class=PostForm,template_name = 'freeboard/post_edit.html')
 post_delete = DeleteView.as_view(model=Post,success_url=reverse_lazy('freeboard:post_list'))

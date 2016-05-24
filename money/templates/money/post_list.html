@@ -6,15 +6,22 @@
 {% load staticfiles %}
 
 <!-- Start header part -->
-<header class="intro-header" style="background-image: url('../../static/img/about-bg.jpg')">
+<header class="intro-header" style="background-image: url('../../static/img/money.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="site-heading">
-                    <h1>날적이</h1>
+                    <h1>풍연 장부</h1>
                     <hr class="small">
-                    <span class="subheading">'날마다 적는 이야기'</span>
+                    <span class="subheading">'각 행사 때의 풍연 장부를 확인하세요'</span>
                 </div>
+
+                    <div style="padding-bottom: 20px;" align="center">
+                         <a style="font-size: 50px;color: white" class="page-scroll " href="#main">
+                            <i class="glyphicon glyphicon-download"></i>
+                        </a>
+                    </div> 
+
             </div>
         </div>
     </div>
@@ -47,44 +54,45 @@
 
 
 .myButton {
-  -moz-box-shadow:inset 0px 1px 0px 0px #fbafe3;
-  -webkit-box-shadow:inset 0px 1px 0px 0px #fbafe3;
-  box-shadow:inset 0px 1px 0px 0px #fbafe3;
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ff5bb0), color-stop(1, #ef027d));
-  background:-moz-linear-gradient(top, #ff5bb0 5%, #ef027d 100%);
-  background:-webkit-linear-gradient(top, #ff5bb0 5%, #ef027d 100%);
-  background:-o-linear-gradient(top, #ff5bb0 5%, #ef027d 100%);
-  background:-ms-linear-gradient(top, #ff5bb0 5%, #ef027d 100%);
-  background:linear-gradient(to bottom, #ff5bb0 5%, #ef027d 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bb0', endColorstr='#ef027d',GradientType=0);
-  background-color:#ff5bb0;
-  -moz-border-radius:6px;
-  -webkit-border-radius:6px;
-  border-radius:6px;
-  border:1px solid #ee1eb5;
+  -moz-box-shadow: 0px 10px 14px -7px #276873;
+  -webkit-box-shadow: 0px 10px 14px -7px #276873;
+  box-shadow: 0px 10px 14px -7px #276873;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #599bb3), color-stop(1, #408c99));
+  background:-moz-linear-gradient(top, #599bb3 5%, #408c99 100%);
+  background:-webkit-linear-gradient(top, #599bb3 5%, #408c99 100%);
+  background:-o-linear-gradient(top, #599bb3 5%, #408c99 100%);
+  background:-ms-linear-gradient(top, #599bb3 5%, #408c99 100%);
+  background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#599bb3', endColorstr='#408c99',GradientType=0);
+  background-color:#599bb3;
+  -moz-border-radius:8px;
+  -webkit-border-radius:8px;
+  border-radius:8px;
   display:inline-block;
   cursor:pointer;
   color:#ffffff;
   font-family:Arial;
-  font-size:15px;
+  font-size:20px;
   font-weight:bold;
-  padding:6px 24px;
+  padding:13px 32px;
   text-decoration:none;
-  text-shadow:0px 1px 0px #c70067;
+  text-shadow:0px 1px 0px #3d768a;
 }
 .myButton:hover {
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ef027d), color-stop(1, #ff5bb0));
-  background:-moz-linear-gradient(top, #ef027d 5%, #ff5bb0 100%);
-  background:-webkit-linear-gradient(top, #ef027d 5%, #ff5bb0 100%);
-  background:-o-linear-gradient(top, #ef027d 5%, #ff5bb0 100%);
-  background:-ms-linear-gradient(top, #ef027d 5%, #ff5bb0 100%);
-  background:linear-gradient(to bottom, #ef027d 5%, #ff5bb0 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ef027d', endColorstr='#ff5bb0',GradientType=0);
-  background-color:#ef027d;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #408c99), color-stop(1, #599bb3));
+  background:-moz-linear-gradient(top, #408c99 5%, #599bb3 100%);
+  background:-webkit-linear-gradient(top, #408c99 5%, #599bb3 100%);
+  background:-o-linear-gradient(top, #408c99 5%, #599bb3 100%);
+  background:-ms-linear-gradient(top, #408c99 5%, #599bb3 100%);
+  background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#408c99', endColorstr='#599bb3',GradientType=0);
+  background-color:#408c99;
 }
 .myButton:active {
   position:relative;
   top:1px;
+}
+
 
 </style>
 
@@ -139,9 +147,11 @@
 
     {% for post in object_list %}
         <div style="padding-top: 30px;" class="col-xs-18 col-sm-6 col-md-3">
-            <div  style="max-height: 400px;border-top: 5px solid #ff5bb0;" class="thumbnail">
+            <div  style="max-height: 400px;border-top: 5px solid #599bb3;" class="thumbnail">
 
             {% if user == post.user %}
+            <span style="font-size: 15px;">
+                        {{ post.created_date | date:"Y/m/d/P"}}</span>
 
                 <div style="text-align: right;">
 
@@ -154,7 +164,8 @@
 
                 </div>
             {% else %}
-
+<span style="font-size: 15px;">
+                        {{ post.created_date | date:"Y/m/d/P"}}</span>
                 <div style="padding-bottom: 28px;"></div>
             {% endif %}
 
@@ -164,7 +175,7 @@
                         <p>{{post.message|truncatewords:5|linebreaks }}</p>
 
                         <p>
-                            <a style="border: 3px solid #ff5bb0;min-width: 100%;" href="{% url "money:post_detail" post.pk%}" class="btn btn-default btn-xs" role="button">게시글 보기</a>                    
+                            <a style="border: 3px solid #599bb3;min-width: 100%;" href="{% url "money:post_detail" post.pk%}" class="btn btn-default btn-xs" role="button">게시글 보기</a>                    
                         </p>
                         <hr>
 
@@ -178,9 +189,8 @@
 
 
                     </div>
-                    <div>
-                        <span style="font-size: 15px;">
-                        {{ post.created_date | date:"Y/m/d/P"}} |</span>
+                    <div align="center">
+                        
                         <span style="font-size:20px;"> {{post.user}}</span>
                     </div>                
                 </div>
