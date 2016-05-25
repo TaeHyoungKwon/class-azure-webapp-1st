@@ -1,8 +1,13 @@
 from django.contrib import admin
-from .models import Post
-# Register your models here.
+from .models import Post, Comment
+
 
 @admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title')
 
-class PostAdmin	(admin.ModelAdmin):
-	list_display = ('title',)
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    pass
+
