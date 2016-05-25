@@ -23,7 +23,7 @@ def list(request):
 
 
 #detail = login_required(DetailView.as_view(model=Post))
-
+@login_required
 def post_list(request):
     queryset_list =Post.objects.all().order_by('-created_date')
     query=request.GET.get("q")
