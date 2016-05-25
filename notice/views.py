@@ -13,7 +13,7 @@ from django.shortcuts import redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 
-
+@login_required
 def post_list(request):
     queryset_list =Post.objects.all().order_by('-created_at')
     query=request.GET.get("q")
@@ -42,7 +42,7 @@ def post_list(request):
     
     return render(request,"notice/post_list.html",context)
 
-
+@login_required
 def post_detail(request,pk):
     post = get_object_or_404(Post, pk=pk)
     post.hit += 1
@@ -63,6 +63,6 @@ class CommentCreateView(CreateView):
         return super(CommentCreateView, self).form_valid(form)
 
 
-comment_new = CommentCreateView.as_view(model=Comment,form_class=CommentForm,template_name = 'notice/add_comment.html')
-comment_edit = UpdateView.as_view(model=Comment, form_class=CommentForm,template_name = 'notice/edit_comment.html')
-comment_delete = DeleteView.as_view(model=Comment,success_url=reverse_lazy('notice:post_list'))
+comment_new = login_required(CommentCreateView.as_view(model=Comment,form_class=CommentForm,template_name = 'notice/add_comment.html'))
+comment_edit = login_required(UpdateView.as_view(model=Comment, form_class=CommentForm,template_name = 'notice/edit_comment.html'))
+comment_delete = login_required(DeleteView.as_view(model=Comment,success_url=reverse_lazy('notice:post_list')))

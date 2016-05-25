@@ -76,9 +76,9 @@ class PostCreateView(CreateView):
         return super(PostCreateView, self).form_valid(form)
 
 
-post_new = PostCreateView.as_view(model=Post, form_class=PostForm,template_name='freeboard/add_post.html')
-post_edit = UpdateView.as_view(model=Post, form_class=PostForm,template_name = 'freeboard/post_edit.html')
-post_delete = DeleteView.as_view(model=Post,success_url=reverse_lazy('freeboard:post_list'))
+post_new = login_required(PostCreateView.as_view(model=Post, form_class=PostForm,template_name='freeboard/add_post.html'))
+post_edit = login_required(UpdateView.as_view(model=Post, form_class=PostForm,template_name = 'freeboard/post_edit.html'))
+post_delete = login_required(DeleteView.as_view(model=Post,success_url=reverse_lazy('freeboard:post_list')))
 
 
 
@@ -96,8 +96,6 @@ class CommentCreateView(CreateView):
         return super(CommentCreateView, self).form_valid(form)
 
 
-comment_new = CommentCreateView.as_view(model=Comment,form_class=CommentForm,template_name = 'freeboard/add_comment.html')
-
-comment_edit = UpdateView.as_view(model=Comment, form_class=CommentForm,template_name = 'freeboard/comment_edit.html')
-
-comment_delete = DeleteView.as_view(model=Comment,success_url=reverse_lazy('freeboard:post_list'))
+comment_new = login_required(CommentCreateView.as_view(model=Comment,form_class=CommentForm,template_name = 'freeboard/add_comment.html'))
+comment_edit = login_required(UpdateView.as_view(model=Comment, form_class=CommentForm,template_name = 'freeboard/comment_edit.html'))
+comment_delete = login_required(DeleteView.as_view(model=Comment,success_url=reverse_lazy('freeboard:post_list')))

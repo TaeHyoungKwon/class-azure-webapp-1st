@@ -13,49 +13,9 @@ from django.db.models import Q
 
 #@login_required
 
-'''
-def post_list(request):
-    posts = Post.objects.all().order_by('-created_date')
-    
-    return render(request, 'bamboo/post_list.html', {'posts': posts})
-'''
-'''
-
-'''
 
 
-
-def hit_count(request,pk):
-
-    if request.method == 'GET':
-        post = get_object_or_404(Post,pk=pk)
-        post.hit += 1
-        post.save()
-
-    return render(request,post_detail,{'post':post})
-
-
-
-#post_list = login_required(ListView.as_view(model=Post,queryset=Post.objects.all().order_by('-created_date'),paginate_by=5))
-
-'''
-class PostDetailView(DetailView):
-    model=Post
-
-    def get(self,request,pk):
-        post = get_object_or_404(Post,pk=self.pk)
-        post.hit +=1
-        post.save()
-
-        return render(request,post_detail,{'post':post})
-
-
-
-post_detail = login_required(DetailView.as_view(model=Post))
-'''
-
-
-
+@login_required
 def post_list(request):
     queryset_list =Post.objects.all().order_by('-created_date')
     query=request.GET.get("q")
@@ -84,7 +44,7 @@ def post_list(request):
     
     return render(request,"bamboo/post_list.html",context)
 
-
+@login_required
 def post_detail(request,pk):
     post = get_object_or_404(Post, pk=pk)
     post.hit += 1
