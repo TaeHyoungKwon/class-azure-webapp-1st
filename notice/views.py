@@ -13,7 +13,7 @@ from django.shortcuts import redirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
 
-@login_required
+
 def post_list(request):
     queryset_list =Post.objects.all().order_by('-created_at')
     query=request.GET.get("q")
@@ -42,7 +42,6 @@ def post_list(request):
     
     return render(request,"notice/post_list.html",context)
 
-@login_required
 def post_detail(request,pk):
     post = get_object_or_404(Post, pk=pk)
     post.hit += 1
