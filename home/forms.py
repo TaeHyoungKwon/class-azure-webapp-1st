@@ -28,22 +28,6 @@ class SignupForm(UserCreationForm):
         ),
     )
 
-    nickname = forms.RegexField(
-        max_length=20,
-        regex=r'^[\w.@+-]+$',
-        error_messages={
-            'invalid': "This value may contain only letters, numbers and "
-                         "@/./+/-/_ characters."
-        },
-        widget=forms.TextInput(
-            attrs={
-                'class': 'form-control',
-                'placeholder': 'Username',
-                'required': 'True',
-            }
-        ),
-    )
-
 
     email = forms.EmailField(
         required=True,
@@ -79,4 +63,4 @@ class SignupForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ("username","nickname", "email", "password1", "password2",)
+        fields = ("username","email", "password1", "password2",)
