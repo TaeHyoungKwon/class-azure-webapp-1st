@@ -22,7 +22,7 @@ class SignupForm(UserCreationForm):
         widget=forms.TextInput(
             attrs={
                 'class': 'form-control',
-                'placeholder': 'Username',
+                'placeholder': '위와 같은 양식으로 작성하세요.',
                 'required': 'True',
             }
         ),
@@ -34,7 +34,7 @@ class SignupForm(UserCreationForm):
         widget=forms.EmailInput(
             attrs={
                 'class': 'form-control',
-                'placeholder': 'Email',
+                'placeholder': 'Email 주소 입력',
                 'required': 'True',
             }
         )
@@ -58,7 +58,7 @@ class SignupForm(UserCreationForm):
                 'required': 'True',
             }
         ),
-        help_text="Enter the same password as above, for verification."
+        help_text="위에서 입력한 패스워드와 동일하게 입력하세요!"
     )
 
     class Meta:

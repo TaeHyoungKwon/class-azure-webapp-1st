@@ -2,9 +2,11 @@ from django import forms
 from .models import Comment
 
 
-
 class CommentForm(forms.ModelForm):
-	class Meta:
-		model = Comment
-		#fields = '__all__'
-		fields = ['message']
+
+     class Meta:
+        model = Comment
+        fields = ['message']
+        labels ={
+        'message':('내용'),
+        }

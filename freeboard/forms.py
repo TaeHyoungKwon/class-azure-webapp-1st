@@ -1,5 +1,6 @@
 from django import forms
 from .models import Post,Comment
+from django.forms import ModelForm,Textarea
 
 
 class PostForm(forms.ModelForm):
@@ -15,10 +16,12 @@ class PostForm(forms.ModelForm):
 
 
 
-class CommentForm(forms.ModelForm):
-	class Meta:
-		model = Comment
-		#fields = '__all__'
-		fields = ['comment_message']
 
+class CommentForm(ModelForm):
 
+     class Meta:
+        model = Comment
+        fields = ['comment_message']
+        labels ={
+        'comment_message':('내용'),
+        }
