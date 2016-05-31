@@ -14,6 +14,7 @@ urlpatterns = [
     url(r'^(?P<pk>\d+)/edit/$', views.post_edit, name='edit_post'),
     url(r'^new/$', views.post_new, name='post_new'),
     url(r'^(?P<pk>\d+)/delete/$', views.post_delete, name='post_delete'),
+    url(r'^like-blog/$', views.like_count_blog, name='like_count_blog'),
 
 
 

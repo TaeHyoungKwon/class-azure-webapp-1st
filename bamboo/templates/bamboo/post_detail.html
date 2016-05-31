@@ -184,7 +184,12 @@
 
 
 
+
 </style>
+
+
+
+
 
 <!-- Start header part -->
     <header id="header1" class="intro-header" style="background-image: url('../../static/img/bamboo.jpg')">
@@ -259,7 +264,26 @@
   </h4>
 </div>
 
-<div style="padding-top: 40px;" class="fb-like" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true" data-href="{% url "bamboo:post_detail" post.pk%}"></div>
+
+
+
+
+<div style="margin-top: 20px;" class="heart-particle-box">
+   <button style="padding-left:5px; ;font-size: 30px;" class="likes post-likes" id="heart-icon" data-post-id="{{post.id}}">
+   {% if liked %}
+   <i class="heart-shaped fa fa-heart" style="display: line-block"></i>
+   <i class="heart-shaped fa fa-heart-o" style="display: none"></i>
+   {% else %}
+   <i class="heart-shaped fa fa-heart" style="display: none"></i>
+   <i class="heart-shaped fa fa-heart-o" style="display: line-block"></i>
+   {% endif %}
+   </button>
+
+   <div style="font-size: 20px;" class="like_count_blog" id="heart-counter">{{ post.likes }}</div>
+
+</div>
+
+
 
 <div align="left" style="max-width:900px;padding-top:20px ">
   <a href="{% url "bamboo:post_list" %}" class="myButton1">목록</a>
@@ -331,6 +355,22 @@
 </div>
 </div>
 </div>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+    $('.post-likes').click(function() {
+        var id;
+        id = $(this).attr('data-post-id');
+        $.get('/bamboo/like-blog/', {
+            post_id: id
+        }, function(data) {
+            $('.like_count_blog').html(data);
+        });
+    });
+});
+
+</script>
 
 
 

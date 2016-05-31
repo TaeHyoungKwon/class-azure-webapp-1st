@@ -13,6 +13,11 @@ class Post(models.Model):
 	published_date = models.DateTimeField(blank=True, null=True)
 	photo = models.ImageField(blank=True,null=True)
 	hit=models.IntegerField(default=0,blank=True,null=True)
+	likes = models.PositiveIntegerField(default=0)
+
+	@property
+	def total_likes(self):
+	    return self.likes.count()
 	
 	def publish(self):
 		self.published_date = timezone.now()

@@ -9,6 +9,7 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import user_passes_test
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q
+from django.http import HttpResponse
 
 
 '''
@@ -59,9 +60,40 @@ def post_list(request):
 @login_required
 def post_detail(request,pk):
     post = get_object_or_404(Post, pk=pk)
+
+    post_id=post.pk
+    liked=False
+
+    if request.session.get('has_liked_'+str(post_id), liked):
+        liked =True
+
     post.hit += 1
     post.save()
-    return render(request, 'freeboard/post_detail.html',{'post':post})
+
+    return render(request, 'freeboard/post_detail.html',{'post':post,'liked':liked})
+
+
+def like_count_blog(request):
+    liked = False
+    if request.method == 'GET':
+        post_id = request.GET['post_id']
+        post = Post.objects.get(id=int(post_id))
+        if request.session.get('has_liked_'+post_id, liked):
+            print("unlike")
+            if post.likes > 0:
+                likes = post.likes - 1
+                try:
+                    del request.session['has_liked_'+post_id]
+                except KeyError:
+                    print("keyerror")
+        else:
+            print("like")
+            request.session['has_liked_'+post_id] = True
+            likes = post.likes + 1
+    post.likes = likes
+    post.save()
+    return HttpResponse(likes, liked)
+
 
 
 class PostCreateView(CreateView):

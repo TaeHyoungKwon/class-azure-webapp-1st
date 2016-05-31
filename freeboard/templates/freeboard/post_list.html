@@ -143,13 +143,24 @@
     </h4>
 
 
-    <div align="right" id="footer">
 
-        <a href="{% url "freeboard:post_detail" post.pk%}">
-                <i style="font-size: 30px;" class="fa fa-comment" aria-hidden="true"></i>
-        </a>
-        <span style="font-size: 20px;font-weight: bold">{{ post.comments.count }}</span>                                                        
-    </div>                            
+
+<div align="right" id="footer">
+
+    <a href="{% url "freeboard:post_detail" post.pk%}">
+            <i style="font-size: 25px;color: #f55567;" class="fa fa-heart" aria-hidden="true"></i>
+    </a>
+    <span style="font-size: 20px;padding-right: 10px;font-weight: bold">{{ post.likes }}</span>                                   
+
+
+    <a href="{% url "freeboard:post_detail" post.pk%}">
+            <i style="font-size: 30px;" class="fa fa-comment" aria-hidden="true"></i>
+    </a>
+    <span style="font-size: 20px;font-weight: bold">{{ post.comments.count }}</span>                                                        
+</div>
+
+
+
 
 
 </div>
