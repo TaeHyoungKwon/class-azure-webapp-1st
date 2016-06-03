@@ -48,7 +48,6 @@ def post_list(request):
 @login_required
 def post_detail(request,pk):
     post = get_object_or_404(Post, pk=pk)
-
     post_id=post.pk
     liked=False
 

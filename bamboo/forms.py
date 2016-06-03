@@ -4,18 +4,20 @@ from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 
 
-
 class PostForm(ModelForm):
 
 
     class Meta:
         model = Post
-        fields = ('title','photo', 'text',)
+        fields = ['title','photo','link','text',]
         labels ={
         	'title':_('제목'),
+            'link' :_('유투브 링크 ID값'),
         	'text':_('내용'),
             'photo':_('사진'),
         }
+
+
 
 
 class CommentForm(ModelForm):

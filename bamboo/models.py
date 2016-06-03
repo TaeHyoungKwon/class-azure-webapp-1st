@@ -14,6 +14,8 @@ class Post(models.Model):
 	photo = models.ImageField(blank=True,null=True)
 	hit=models.IntegerField(default=0,blank=True,null=True)
 	likes = models.PositiveIntegerField(default=0)
+	link = models.CharField(max_length=200,blank=True,null=True)
+	
 
 	@property
 	def total_likes(self):
@@ -46,7 +48,6 @@ class Comment(models.Model):
 		return reverse('bamboo:post_detail', args=[self.post_id])
 	def __str__(self):
 		return self.text
-
 
 
 

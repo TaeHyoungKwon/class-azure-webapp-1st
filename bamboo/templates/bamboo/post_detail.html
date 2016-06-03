@@ -247,22 +247,40 @@
     <div align="left"; style="background-color:white;margin-top: 5px;
     max-width:100%;width:900px;min-height: 150px;border-top: 5px solid #3cb371;padding-bottom: 10px;">
 
-    <div style="padding-top: 20px;padding-bottom: 20px;" align="center">
-      {% if post.photo %}
-      <img style="max-width:90%;" src="{{post.photo.url}}"/>
-      {% endif %}             
-    </div>
 
-    
-    <h4  style=" 
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-bottom: 30px;
-    line-height:200%;
-    font-weight:bold;">
-    {{ post.text|linebreaks }} 
-  </h4>
-</div>
+      <!--About Photo -->
+      <div style="padding-top: 20px;padding-bottom: 20px;" align="center">
+        {% if post.photo %}
+        <img style="max-width:90%;" src="{{post.photo.url}}"/>
+        {% endif %}             
+      </div>
+
+
+      <!--About Youtube Link -->
+      <div style="padding-top: 20px;padding-bottom: 20px;" align="center">
+        {% if post.link %}
+
+        <iframe id="ytplayer" type="text/html" width="640" height="390"
+        src="http://www.youtube.com/embed/{{post.link}}?autoplay=0&origin=http://example.com"
+        frameborder="0" allowfullscreen></iframe>
+        {% endif %}
+      </div>
+
+
+      <!--Main Text in Post_detail -->
+      <h4  style=" 
+      margin-left: 30px;
+      margin-right: 30px;
+      margin-bottom: 30px;
+      line-height:200%;
+      font-weight:bold;">
+      {{ post.text|linebreaks }} 
+      </h4>
+
+  </div>
+
+
+
 
 
 
@@ -295,8 +313,11 @@
   margin-top: 20px;
   line-height:200%;">Comments</h3>
 
-  <div>
 
+
+
+
+  <div>
 
     {% for comment in post.comments.all %}
 
