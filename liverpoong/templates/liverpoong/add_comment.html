@@ -1,0 +1,47 @@
+{% extends 'notice/base.html' %}
+
+{% block content %}
+
+
+
+{% load staticfiles %}
+
+    <header class="intro-header" style="background-image: url('{% static "img/about-bg.jpg" %}')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>댓글 달기</h1>
+                        <hr class="small">
+                        <span class="subheading">'욕설 및 비방 금지'</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+<div align="center">
+	<div align="left" style="width:500px">
+		<div class="form-group">
+		    <p style="font-size: 40px;"></p>
+		    <form style="padding-bottom: 20px;" method="POST" class="post-form ">
+		    {% csrf_token %}
+		    <div style="font-size: 30px;">
+		    	{{ form.as_p }}
+		    </div>
+		    <a>
+		        <button style="margin-left: 200px;" type="submit" class="save btn btn-primary">제출</button>
+		    </a>
+		    </form>
+		</div>
+	</div>
+</div>
+
+
+
+    
+{% endblock %}

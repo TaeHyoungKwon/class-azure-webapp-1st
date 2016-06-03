@@ -29,7 +29,11 @@ urlpatterns = [
     url(r'^meeting/', include('meeting.urls', namespace='meeting')),
     url(r'^money/', include('money.urls', namespace='money')),
     url(r'^mainpage/', include('mainpage.urls', namespace='mainpage')),
+    url(r'^bbibboo/', include('bbibboo.urls', namespace='bbibboo')),
+    url(r'^poongchang/', include('poongchang.urls', namespace='poongchang')),
+    url(r'^liverpoong/', include('liverpoong.urls', namespace='liverpoong')),
     url(r'^accounts/',include('django.contrib.auth.urls')),
+    
     url(r'^$' , lambda r: redirect('home:home')),
 ]
 

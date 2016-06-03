@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     'meeting',
     'money',
     'mainpage',
+    'bbibboo',
+    'poongchang',
+    'liverpoong',
 ]
 
 MIDDLEWARE_CLASSES = [

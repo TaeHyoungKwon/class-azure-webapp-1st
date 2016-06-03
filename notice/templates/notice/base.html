@@ -789,22 +789,22 @@ background-color:#FF9999;
 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle faa-parent animated-hover" data-toggle="dropdown">
-                                <i class="fa fa-fw fa-lg fa-th faa-tada faa-fast"></i>소모임(준비중)
+                                <i class="fa fa-fw fa-lg fa-th faa-tada faa-fast"></i>소모임
                                 <span class="fa fa-caret-down"></span>
                             </a>
                             <ul class="dropdown-menu" role="menu">
                                 <li>
-                                    <a class="faa-parent animated-hover">
+                                    <a href="{% url "bbibboo:post_list" %}" class="faa-parent animated-hover">
                                         <i class="fa fa-fw fa-heart faa-tada faa-fast"></i>삐로롱뿌로롱
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="faa-parent animated-hover">
+                                    <a href="{% url "poongchang:post_list" %}" class="faa-parent animated-hover">
                                         <i class="fa fa-fw fa-music faa-tada faa-fast"></i>풍창
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="faa-parent animated-hover">
+                                    <a href="{% url "liverpoong:post_list" %}" class="faa-parent animated-hover">
                                         <i class="fa fa-fw fa-futbol-o faa-tada faa-fast"></i>리버풍
                                     </a>
                                 </li> 

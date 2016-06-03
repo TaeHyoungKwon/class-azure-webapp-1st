@@ -1,0 +1,195 @@
+
+{% extends "notice/base.html" %}
+
+{% block content %}
+
+
+<style type="text/css">
+    
+.myButton {
+    -moz-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #fce2c1;
+    box-shadow:inset 0px 1px 0px 0px #fce2c1;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffc477), color-stop(1, #fb9e25));
+    background:-moz-linear-gradient(top, #ffc477 5%, #fb9e25 100%);
+    background:-webkit-linear-gradient(top, #ffc477 5%, #fb9e25 100%);
+    background:-o-linear-gradient(top, #ffc477 5%, #fb9e25 100%);
+    background:-ms-linear-gradient(top, #ffc477 5%, #fb9e25 100%);
+    background:linear-gradient(to bottom, #ffc477 5%, #fb9e25 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc477', endColorstr='#fb9e25',GradientType=0);
+    background-color:#ffc477;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #eeb44f;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #cc9f52;
+}
+.myButton:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #fb9e25), color-stop(1, #ffc477));
+    background:-moz-linear-gradient(top, #fb9e25 5%, #ffc477 100%);
+    background:-webkit-linear-gradient(top, #fb9e25 5%, #ffc477 100%);
+    background:-o-linear-gradient(top, #fb9e25 5%, #ffc477 100%);
+    background:-ms-linear-gradient(top, #fb9e25 5%, #ffc477 100%);
+    background:linear-gradient(to bottom, #fb9e25 5%, #ffc477 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fb9e25', endColorstr='#ffc477',GradientType=0);
+    background-color:#fb9e25;
+}
+.myButton:active {
+    position:relative;
+    top:1px;
+}
+
+
+
+</style>
+
+
+    <!-- Start header part -->
+    <header class="intro-header" style="background-image: url('../static/img/poongchang.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>풍 창</h1>
+                        <hr class="small">
+                        <span class="subheading">'풍창 소모임 페이지 입니다.'</span>
+                    </div>
+
+                    <div align="center">
+                         <a style="font-size: 50px;color: white" class="page-scroll " href="#example">
+                            <i class="glyphicon glyphicon-download"></i>
+                        </a>
+                    </div> 
+
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End header part -->
+
+
+
+<div id="main" style="padding: 20px" id="post" class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 ">
+
+            <a style="min-width: 100%;" class="myButton" href="{% url 'poongchang:post_new' %}" />
+                <p style="font-size: 35px;font-weight: bold;text-align: center;">글 남기기</p>
+            </a>
+        <div style="padding-top: 30px;" class ="col-lg-8 col-lg-offset-9 ">
+            <form method='GET' action=''>
+
+            <input type='text' name='q' placeholder='Search posts' value='{{request.GET.q}}'/>
+            <input type='submit' value='Search'/>            
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+<table style="font-weight: bold;" id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead >
+            <tr style="background-color: #ffc477;font-size: 25px;">
+                <th style="text-align: center;color: white;">ID</th>
+                <th style="text-align: center;color: white;">작성자</th>
+                <th style="text-align: center;color: white;">제목</th>
+                <th style="text-align: center;color: white;">날짜</th>
+                <th style="text-align: center;color: white;">조회수</th>                
+                <th style="text-align: center;color: white;">좋아요</th>                
+
+            </tr>
+        </thead>
+
+            {% if user == post.user %}
+          
+
+                <div style="text-align: right;">
+
+                    <a href="{% url "money:post_edit" post.pk%}">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+
+                    <a href="{% url "money:post_delete" post.pk%}">
+                        <i class="fa fa-close" aria-hidden="true"></i>
+                    </a>
+
+                </div>
+            {% else %}
+<span style="font-size: 15px;">
+                        {{ post.created_date | date:"Y/m/d/P"}}</span>
+                <div style="padding-bottom: 28px;"></div>
+            {% endif %}
+
+
+        <tbody>
+
+
+        {% for post in object_list %}
+            <tr style="text-align: center;">
+                <td>{{ post.id }}</td>
+                <td>{{ post.user }}</td>
+                <td>
+                <a href="{% url "poongchang:post_detail" post.pk %}">
+                    {{ post.title }} [{{post.poongchang_comments.count}}]
+                </a>
+                 {% if user == post.user %}
+
+                 <span style="padding-left: 30px;">
+                    <a href="{% url "poongchang:post_edit" post.pk%}">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+
+                    <a href="{% url "poongchang:post_delete" post.pk%}">
+                        <i class="fa fa-close" aria-hidden="true"></i>
+                    </a>
+                </span>
+                {% endif %}         
+
+                </td> 
+                <td>{{ post.created_date | date:"Y/m/d/D h:m:s" }}</td>
+                <td>{{ post.hit}}</td>
+                <td>{{ post.likes}}</td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+</table>
+
+
+<div align="center">
+    <div  class="pagination">
+        <span style="font-size: 40px;font-weight: bold;" class="step-links">
+            
+            {% if object_list.has_previous %}
+                <a class="myButton"  href="?page={{ object_list.previous_page_number }}{% if request.GET.q %}&q={{request.GET.q}}{% endif %}">    <p style="font-size: 20px;font-weight: bold;">이전 페이지</p>
+                </a>
+            {% endif %}
+
+            <span style="padding-left: 50px;" class="current">
+                Page <span style="font-size: 40px;color:red">{{ object_list.number }}</span> of 
+                <span style="font-size: 50px;padding-right: 50px;"  >{{ object_list.paginator.num_pages }}</span>
+            
+
+            {% if object_list.has_next %}
+                <a class="myButton"  href="?page={{ object_list.next_page_number }}{% if request.GET.q %}&q={{request.GET.q}}{% endif %}">
+                    <p style="font-size: 20px;font-weight: bold;">다음 페이지</p>
+                </a>
+            {% endif %}
+            </span>
+        </span>
+    </div>
+</div>
+
+
+  			
+  		</div>
+  	</div>
+{% endblock %}
