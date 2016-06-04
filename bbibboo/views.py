@@ -24,7 +24,7 @@ def list(request):
 
 
 #detail = login_required(DetailView.as_view(model=Post))
-@login_required
+
 def post_list(request):
     queryset_list =Post.objects.all().order_by('-created_date')
     query=request.GET.get("q")
@@ -57,7 +57,7 @@ def post_list(request):
 
 
 
-@login_required
+
 def post_detail(request,pk):
     post = get_object_or_404(Post, pk=pk)
 
@@ -108,9 +108,9 @@ class PostCreateView(CreateView):
         return super(PostCreateView, self).form_valid(form)
 
 
-post_new = login_required(PostCreateView.as_view(model=Post, form_class=PostForm,template_name='bbibboo/add_post.html'))
-post_edit = login_required(UpdateView.as_view(model=Post, form_class=PostForm,template_name = 'bbibboo/edit_post.html'))
-post_delete = login_required(DeleteView.as_view(model=Post,success_url=reverse_lazy('bbibboo:post_list')))
+post_new = PostCreateView.as_view(model=Post, form_class=PostForm,template_name='bbibboo/add_post.html')
+post_edit = UpdateView.as_view(model=Post, form_class=PostForm,template_name = 'bbibboo/edit_post.html')
+post_delete = DeleteView.as_view(model=Post,success_url=reverse_lazy('bbibboo:post_list'))
 
 
 
@@ -128,6 +128,6 @@ class CommentCreateView(CreateView):
         return super(CommentCreateView, self).form_valid(form)
 
 
-comment_new = login_required(CommentCreateView.as_view(model=Comment,form_class=CommentForm,template_name = 'bbibboo/add_comment.html'))
-comment_edit = login_required(UpdateView.as_view(model=Comment, form_class=CommentForm,template_name = 'bbibboo/edit_comment.html'))
-comment_delete = login_required(DeleteView.as_view(model=Comment,success_url=reverse_lazy('bbibboo:post_list')))
+comment_new = CommentCreateView.as_view(model=Comment,form_class=CommentForm,template_name = 'bbibboo/add_comment.html')
+comment_edit = UpdateView.as_view(model=Comment, form_class=CommentForm,template_name = 'bbibbooedit_comment.html')
+comment_delete = DeleteView.as_view(model=Comment,success_url=reverse_lazy('bbibboo:post_list'))
