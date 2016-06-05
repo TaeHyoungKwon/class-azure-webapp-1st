@@ -83,11 +83,11 @@ blockquote {
     </header>
     <!-- End header part -->
 
-
+<div align="center"class="col-lg-12 col-sm-12" >
 <iframe width="1200px" height="800px" src="{{post.link}}" frameborder="0" allowfullscreen allowtransparency></iframe>
 
 
-<div align="center"class="col-lg-12 col-sm-12" >
+
   <div style="margin-top: 20px;" class="heart-particle-box">
      <button style="padding-left:5px; ;font-size: 30px;" class="likes post-likes" id="heart-icon" data-post-id="{{post.id}}">
      {% if liked %}
@@ -106,6 +106,23 @@ blockquote {
      <div style="font-size: 20px;" class="like_count_blog" id="heart-counter">{{ post.likes }}</div>
 
   </div> 
+
+<script type="text/javascript">
+    $(document).ready(function() {
+    $('.post-likes').click(function() {
+        var id;
+        id = $(this).attr('data-post-id');
+        $.get('/monthlypy/like-blog/', {
+            post_id: id
+        }, function(data) {
+            $('.like_count_blog').html(data);
+        });
+    });
+});
+
+</script>
+
+  
 </div>
 
 
@@ -163,20 +180,7 @@ blockquote {
 
 
 
-<script type="text/javascript">
-    $(document).ready(function() {
-    $('.post-likes').click(function() {
-        var id;
-        id = $(this).attr('data-post-id');
-        $.get('/monthlypy/like-blog/', {
-            post_id: id
-        }, function(data) {
-            $('.like_count_blog').html(data);
-        });
-    });
-});
 
-</script>
 
 
 
