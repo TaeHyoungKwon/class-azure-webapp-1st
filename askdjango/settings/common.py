@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'bbibboo',
     'poongchang',
     'liverpoong',
+    'monthlypy',
 ]
 
 MIDDLEWARE_CLASSES = [

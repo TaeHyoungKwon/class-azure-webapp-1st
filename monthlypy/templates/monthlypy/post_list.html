@@ -1,0 +1,80 @@
+
+{% extends "notice/base.html" %}
+
+{% block content %}
+
+{% load staticfiles %}
+
+
+    <!-- Start header part -->
+    <header class="intro-header" style="background-image: url('../static/img/monthlypy.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>월 간 풍 연</h1>
+                        <hr class="small">
+                        <span class="subheading">'한달 간의 풍연 소식을 확인하세요'</span>
+                    </div>
+
+                    <div align="center">
+                         <a style="font-size: 50px;color: white" class="page-scroll " href="#example">
+                            <i class="glyphicon glyphicon-download"></i>
+                        </a>
+                    </div> 
+
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End header part -->
+
+
+<div class="container">
+	<div class="row">
+
+    {% for post in object_list %}
+    <div class="col-xs-6 col-md-3">     
+     <div style="height: 376px;" class="bs-flipper thumbnail" ontouchstart="this.classList.toggle('hover');">
+      
+     <a href="{% url "monthlypy:post_detail" post.pk %}">  
+      <div  class="flipper">
+
+
+        <div class="front">
+          <img data-src="holder.js/100%x180" alt="100%x180" src="{{post.photo.url}}" data-holder-rendered="true" style="height: 300px; width: 100%; display: block;">
+
+        <div align="center">
+          <p>{{post.title}}</p>
+        </div> 
+
+        </div>
+
+
+        <div class="back">
+
+          <img data-src="holder.js/100%x180" alt="100%x180" src="{% static "img/logo.jpg"%}" data-holder-rendered="true" style="height: 300px; width: 100%; display: block;">
+
+
+        <div align="center">
+          <p>{{post.title}}</p>
+        </div> 
+
+
+        </div>
+        
+
+        </div>
+           </a>  
+
+      </div>
+    </div>
+    {% endfor %}
+
+
+  </div>
+</div>
+
+
+{% endblock %}

@@ -32,6 +32,7 @@ urlpatterns = [
     url(r'^bbibboo/', include('bbibboo.urls', namespace='bbibboo')),
     url(r'^poongchang/', include('poongchang.urls', namespace='poongchang')),
     url(r'^liverpoong/', include('liverpoong.urls', namespace='liverpoong')),
+    url(r'^monthlypy/', include('monthlypy.urls', namespace='monthlypy')),
     url(r'^accounts/',include('django.contrib.auth.urls')),
     
     url(r'^$' , lambda r: redirect('home:home')),
