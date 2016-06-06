@@ -4,181 +4,182 @@
 {% block content %}
 {% load staticfiles %}
 
- <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
 
 <style type="text/css">
-.myButton {
-  -moz-box-shadow:inset 0px 1px 0px 0px #a6827e;
-  -webkit-box-shadow:inset 0px 1px 0px 0px #a6827e;
-  box-shadow:inset 0px 1px 0px 0px #a6827e;
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7d5d3b), color-stop(1, #634b30));
-  background:-moz-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
-  background:-webkit-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
-  background:-o-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
-  background:-ms-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
-  background:linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7d5d3b', endColorstr='#634b30',GradientType=0);
-  background-color:#7d5d3b;
-  -moz-border-radius:3px;
-  -webkit-border-radius:3px;
-  border-radius:3px;
-  border:1px solid #54381e;
-  display:inline-block;
-  cursor:pointer;
-  color:#ffffff;
-  font-family:Arial;
-  font-size:13px;
-  padding:6px 24px;
-  text-decoration:none;
-  text-shadow:0px 1px 0px #4d3534;
-}
-.myButton:hover {
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #634b30), color-stop(1, #7d5d3b));
-  background:-moz-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
-  background:-webkit-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
-  background:-o-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
-  background:-ms-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
-  background:linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#634b30', endColorstr='#7d5d3b',GradientType=0);
-  background-color:#634b30;
-}
-.myButton:active {
-  position:relative;
-  top:1px;
-}
+  .myButton {
+    -moz-box-shadow:inset 0px 1px 0px 0px #a6827e;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #a6827e;
+    box-shadow:inset 0px 1px 0px 0px #a6827e;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7d5d3b), color-stop(1, #634b30));
+    background:-moz-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
+    background:-webkit-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
+    background:-o-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
+    background:-ms-linear-gradient(top, #7d5d3b 5%, #634b30 100%);
+    background:linear-gradient(to bottom, #7d5d3b 5%, #634b30 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7d5d3b', endColorstr='#634b30',GradientType=0);
+    background-color:#7d5d3b;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+    border:1px solid #54381e;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:13px;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #4d3534;
+  }
+  .myButton:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #634b30), color-stop(1, #7d5d3b));
+    background:-moz-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
+    background:-webkit-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
+    background:-o-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
+    background:-ms-linear-gradient(top, #634b30 5%, #7d5d3b 100%);
+    background:linear-gradient(to bottom, #634b30 5%, #7d5d3b 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#634b30', endColorstr='#7d5d3b',GradientType=0);
+    background-color:#634b30;
+  }
+  .myButton:active {
+    position:relative;
+    top:1px;
+  }
 
-blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #7d5d3b;
-  margin: 1.5em 10px;
-  padding: 0.5em 10px;
-  quotes: "\201C""\201D""\2018""\2019";
-}
+  blockquote {
+    background: #f9f9f9;
+    border-left: 10px solid #7d5d3b;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+  }
 
 
 
 </style>
 
-    <!-- Start header part -->
-    <header class="intro-header" style="background-image: url('../../static/img/monthlypy.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
-                        <h1>월 간 풍 연</h1>
-                        <hr class="small">
-                        <span class="subheading">'한달 간의 풍연 소식을 확인하세요'</span>
-                    </div>
-
-                    <div align="center">
-                         <a style="font-size: 50px;color: white" class="page-scroll " href="#example">
-                            <i class="glyphicon glyphicon-download"></i>
-                        </a>
-                    </div> 
-
-
-                </div>
-            </div>
+<!-- Start header part -->
+<header class="intro-header" style="background-image: url('../../static/img/monthlypy.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="site-heading">
+          <h1>월 간 풍 연</h1>
+          <hr class="small">
+          <span class="subheading">'한달 간의 풍연 소식을 확인하세요'</span>
         </div>
-    </header>
-    <!-- End header part -->
 
-<div style="width: 100%" align="center"class="col-lg-12 col-sm-12" >
-<iframe width="100%" height="1000px" src="{{post.link}}" frameborder="0" allowfullscreen allowtransparency></iframe>
+        <div align="center">
+         <a style="font-size: 50px;color: white" class="page-scroll " href="#example">
+          <i class="glyphicon glyphicon-download"></i>
+        </a>
+      </div> 
+
+
+    </div>
+  </div>
+</div>
+</header>
+<!-- End header part -->
+
+<div style="background-color: #E9E9E9;" class="col-lg-12 col-sm-12" >
+
+<div align="center">
+  <iframe width="90%" height="800px" src="{{post.link}}" frameborder="0" allowfullscreen allowtransparency></iframe>
 
 
 
   <div style="margin-top: 20px;" class="heart-particle-box">
-     <button style="padding-left:5px; ;font-size: 30px;" class="likes post-likes" id="heart-icon" data-post-id="{{post.id}}">
+   <button style="padding-left:5px; ;font-size: 30px;" class="likes post-likes" id="heart-icon" data-post-id="{{post.id}}">
      {% if liked %}
      
      <i class="heart-shaped fa fa-heart" style="display: line-block"></i>
      <i class="heart-shaped fa fa-heart-o" style="display: none"></i>
-   
+
      {% else %}
      
      <i class="heart-shaped fa fa-heart" style="display: none"></i>
      <i class="heart-shaped fa fa-heart-o" style="display: line-block"></i>
 
      {% endif %}
-     </button>
+   </button>
 
-     <div style="font-size: 20px;" class="like_count_blog" id="heart-counter">{{ post.likes }}</div>
+   <div style="font-size: 20px;" class="like_count_blog" id="heart-counter">{{ post.likes }}</div>
 
-  </div> 
+ </div> 
 
-<script type="text/javascript">
-    $(document).ready(function() {
+ <script type="text/javascript">
+  $(document).ready(function() {
     $('.post-likes').click(function() {
-        var id;
-        id = $(this).attr('data-post-id');
-        $.get('/monthlypy/like-blog/', {
-            post_id: id
-        }, function(data) {
-            $('.like_count_blog').html(data);
-        });
+      var id;
+      id = $(this).attr('data-post-id');
+      $.get('/monthlypy/like-blog/', {
+        post_id: id
+      }, function(data) {
+        $('.like_count_blog').html(data);
+      });
     });
-});
+  });
 
 </script>
 
-
 </div>
 
-
-        
-
-    <div align="left" style="max-width:900px;padding-top:20px ">
-      <a href="{% url "monthlypy:post_list" %}" class="myButton">목록</a>
-      <a href="{% url "monthlypy:comment_new" post.pk%}" class="myButton">댓글달기</a>
-    </div>
-
-    <h3
-    style="
-    margin-right: 30px;
-    margin-top: 20px;
-    line-height:200%;">Comments</h3>
-
-    <div>
-
-
-      {% for comment in post.monthlypy_comments.all %}
-
-
-
-      <blockquote >
-
-
-
-        <span style="margin-bottom: 20px;font-size: 20px;">{{comment.comment_user}} | {{comment.comment_created_date | timesince}} ago</span>
-        <br/>
-        <span style="font-weight: bold;font-size: 25px;">{{comment.comment_message | linebreaks}} </span>
-
-        {% if user == comment.monthlypy_comment_user %} 
-        <div align="right" style="max-width:900px;padding: 20px;">
-          <a href="{% url "monthlypy:comment_edit" post.pk comment.pk%}" class="myButton">댓글 수정</a>
-          <a href="{% url "monthlypy:comment_delete" post.pk comment.pk%}" class="myButton">댓글 삭제</a> 
-        </div>
-
-        {% endif %}     
-
-
-      </blockquote> 
-
-
-      {% endfor %}
-      <hr/>
-
-    </div>
-
-
+<div style="width: 1100px;padding-left: 100px;" > 
 
   <div align="left" style="max-width:900px;padding-top:20px ">
     <a href="{% url "monthlypy:post_list" %}" class="myButton">목록</a>
     <a href="{% url "monthlypy:comment_new" post.pk%}" class="myButton">댓글달기</a>
   </div>
 
+  <h3
+  style="
+  margin-right: 30px;
+  margin-top: 20px;
+  line-height:200%;">Comments</h3>
 
+
+
+
+
+
+  {% for comment in post.monthlypy_comments.all %}
+
+
+
+  <blockquote>
+
+
+
+    <span style="margin-bottom: 20px;font-size: 20px;">{{comment.comment_user}} | {{comment.comment_created_date | timesince}} ago</span>
+    <br/>
+    <span style="font-weight: bold;font-size: 25px;">{{comment.comment_message | linebreaks}} </span>
+
+    {% if user == comment.monthlypy_comment_user %} 
+    <div align="right" style="max-width:900px;padding: 20px;">
+      <a href="{% url "monthlypy:comment_edit" post.pk comment.pk%}" class="myButton">댓글 수정</a>
+      <a href="{% url "monthlypy:comment_delete" post.pk comment.pk%}" class="myButton">댓글 삭제</a> 
+    </div>
+
+    {% endif %}     
+
+
+  </blockquote> 
+
+
+  {% endfor %}
+  <hr/>
+
+
+
+
+  <div align="left" style="max-width:900px;padding-bottom:20px ">
+    <a href="{% url "monthlypy:post_list" %}" class="myButton">목록</a>
+    <a href="{% url "monthlypy:comment_new" post.pk%}" class="myButton">댓글달기</a>
+  </div>
+</div>
+</div>
 
 
 

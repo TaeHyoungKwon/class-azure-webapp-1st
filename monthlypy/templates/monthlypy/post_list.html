@@ -35,19 +35,30 @@
 	<div class="row">
 
     {% for post in object_list %}
-    <div class="col-xs-6 col-md-3">     
-     <div style="height: 376px;" class="bs-flipper thumbnail" ontouchstart="this.classList.toggle('hover');">
+    <div  class="col-xs-6 col-md-3">     
+     <div style="border:3px black solid;height: 376px;" class="bs-flipper thumbnail" ontouchstart="this.classList.toggle('hover');">
       
      <a href="{% url "monthlypy:post_detail" post.pk %}">  
       <div  class="flipper">
 
 
-        <div class="front">
+        <div align="center" class="front">
           <img data-src="holder.js/100%x180" alt="100%x180" src="{{post.photo.url}}" data-holder-rendered="true" style="height: 300px; width: 100%; display: block;">
 
-        <div align="center">
-          <p>{{post.title}}</p>
-        </div> 
+          <i style="font-size: 15px;font-weight: bold;" class="fa fa-eye" aria-hidden="true"> {{post.hit}} | </i>
+
+
+
+          <i style="font-size:15px;" class="fa fa-heart" aria-hidden="true">
+          {{ post.likes }} |</i>
+
+        
+       
+          <i style="font-size:15px;" class="fa fa-comment" aria-hidden="true">
+          {{ post.monthlypy_comments.count }}</i>
+
+        <br>
+        {{post.title}}
 
         </div>
 
@@ -57,9 +68,9 @@
           <img data-src="holder.js/100%x180" alt="100%x180" src="{% static "img/logo.jpg"%}" data-holder-rendered="true" style="height: 300px; width: 100%; display: block;">
 
 
-        <div align="center">
-          <p>{{post.title}}</p>
-        </div> 
+        <span align="center">
+          <p>보러가기</p>
+        </span> 
 
 
         </div>
