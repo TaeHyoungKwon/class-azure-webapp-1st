@@ -8,6 +8,7 @@ import django.db.models.deletion
 
 
 
+
 class Post(models.Model):
 	user = models.ForeignKey('auth.User',related_name='money_post_user')
 	title = models.CharField(max_length=200)

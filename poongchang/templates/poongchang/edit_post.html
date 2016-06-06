@@ -31,6 +31,7 @@
 			<form style="padding-bottom: 20px;" method="POST" class="post-form " enctype="multipart/form-data">
 				{% csrf_token %}
 				<div style="font-size: 30px;">
+					{{form.media}}	
 					{{ form.as_p }}
 				</div>
 				<a>

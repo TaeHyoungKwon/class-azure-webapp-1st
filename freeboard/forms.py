@@ -1,6 +1,8 @@
 from django import forms
 from .models import Post,Comment
 from django.forms import ModelForm,Textarea
+from ckeditor.widgets import CKEditorWidget
+
 
 
 class PostForm(forms.ModelForm):
@@ -9,9 +11,9 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ('title','photo','link','message')
         labels ={
-        	'title':('제목'),
+            'title':('제목'),
             'link' :('유투브 링크 ID값'),
-        	'photo':('사진'),
+            'photo':('사진'),
             'message':('내용'),
         }       
 

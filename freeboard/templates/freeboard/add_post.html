@@ -32,9 +32,10 @@
 		<div>
 		    <p style="font-size: 40px;"></p>
 		    <form style="padding-bottom: 20px;" method="POST" class="post-form" enctype="multipart/form-data">		    {% csrf_token %}
-		    <div >
-		    	{{ form.as_p }}
-		    </div>
+		    <div>
+		    {{ form.as_p}}
+            
+		    </div>s
 		    <a>
 		        <button style="margin-left: 200px;" type="submit" class="save btn btn-primary">제출</button>
 		    </a>

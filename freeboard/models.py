@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 
 
 
+
 class Post(models.Model):
 	user = models.ForeignKey('auth.User')
 	title = models.CharField(max_length=200)

@@ -50,6 +50,10 @@ INSTALLED_APPS = [
     'poongchang',
     'liverpoong',
     'monthlypy',
+    'ckeditor',
+    'ckeditor_uploader',
+    'goodcolumn',
+
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -76,6 +80,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
             ],
         },
     },
@@ -141,3 +146,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = join(BASE_DIR, 'media')
 
 LOGIN_REDIRECT_URL = '/home/'
+
+
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+
+CKEDITOR_UPLOAD_PATH = "uploads/"

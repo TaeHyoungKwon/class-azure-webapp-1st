@@ -34,6 +34,9 @@ urlpatterns = [
     url(r'^liverpoong/', include('liverpoong.urls', namespace='liverpoong')),
     url(r'^monthlypy/', include('monthlypy.urls', namespace='monthlypy')),
     url(r'^accounts/',include('django.contrib.auth.urls')),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    url(r'^goodcolumn/', include('goodcolumn.urls',namespace='goodcolumn')),
+
     
     url(r'^$' , lambda r: redirect('home:home')),
 ]

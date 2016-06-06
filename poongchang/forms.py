@@ -1,20 +1,19 @@
 from django import forms
 from .models import Post,Comment
 from django.forms import ModelForm,Textarea
-
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
 class PostForm(forms.ModelForm):
-
+    message = forms.CharField(widget=CKEditorUploadingWidget())
     class Meta:
         model = Post
         fields = ('title','photo','link','message')
         labels ={
-        	'title':('제목'),
+            'title':('제목'),
             'link' :('유투브 링크 ID값'),
-        	'photo':('사진'),
-            'message':('내용'),
-        }       
+            'photo':('사진'),
 
+        }
 
 
 

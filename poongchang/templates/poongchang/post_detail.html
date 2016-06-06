@@ -267,7 +267,7 @@
     margin-bottom: 30px;
     line-height:200%;
     font-weight:bold;">
-    {{ post.message|linebreaks }} 
+    {{ post.message|safe|linebreaks }} 
   </h4>
 </div>
 
