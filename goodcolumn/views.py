@@ -34,7 +34,7 @@ def post_list(request):
             Q(message__icontains=query)|
             Q(user__username__icontains=query)
                 ).distinct()
-    paginator = Paginator(queryset_list, 5)
+    paginator = Paginator(queryset_list, 10)
     page = request.GET.get('page') 
 
     try:
