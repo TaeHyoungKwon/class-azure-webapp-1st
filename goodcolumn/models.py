@@ -22,6 +22,7 @@ class Post(models.Model):
 	link = models.CharField(max_length=200,blank=True,null=True)
 
 
+
 	@property
 	def total_likes(self):
 	    return self.likes.count()	
