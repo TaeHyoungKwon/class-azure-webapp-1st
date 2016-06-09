@@ -7,17 +7,38 @@
     ==========================================-->
     <div id="tf-home" class="text-center">
         <div class="overlay">
-            <div style="padding-top: 200px;">
+            <div style="padding-top: 150px;">
 
 
                 <p style="font-size: 60px; font-weight: bold"> <strong><br> 광운대학교 풍물 굿패 연합</strong></p>
 
+
+
+               {% if user.is_authenticated %}
+
+                     <div style="padding-top: 20px;" class="col-md-6 col-md-offset-3">
+                     <span style="font-size:20px;"><span style="font-size:40px;color: white">{{user}}</span> 님 <br>광풍연 홈페이지에 오신 것을 환영 합니다!!</span>
+                    </div>  
+
+                    <div style="padding-top: 20px;padding-bottom: 20px;" class="col-md-2 col-md-offset-5">
+                    <a href="{% url "logout" %}?next=/" class="page-scroll">
+                      <button style="min-width: 100%;" type="button" class="btn btn-success"><span style="font-size: 20px;">로그아웃</span></button></a>
+                    </div>
+               {% else %}
+
                     <div style="padding-top: 20px;" class="col-md-2 col-md-offset-5">
-                    <a href="{% url "home:user_new" %}" class="page-scroll">
-                      <button style="min-width: 100%;" type="button" class="btn btn-danger"><span style="font-size: 20px;">회원가입</span></button></a>
+                    <a href="{% url "login" %}" class="page-scroll">
+                      <button style="min-width: 100%;" type="button" class="btn btn-success"><span style="font-size: 20px;">로그인</span></button></a>
                     </div>
 
 
+                    <div style="padding-top: 20px;padding-bottom: 20px;" class="col-md-2 col-md-offset-5">
+                    <a href="{% url "home:user_new" %}" class="page-scroll">
+                      <button style="min-width: 100%;" type="button" class="btn btn-success"><span style="font-size: 20px;">회원가입</span></button></a>
+                    </div>
+
+
+               {% endif %}
 
                     <div style="padding-top: 20px;" class="col-md-2 col-md-offset-5">
                     <a href="{% url "notice:post_list" %}" class="page-scroll">
@@ -29,7 +50,7 @@
                       <button style="min-width: 100%;" type="button" class="btn btn-warning"><span style="font-size: 20px;" >소개 보기</span></button></a>
                     </div>
 
-                    <div style="padding-top: 40px;" class="col-md-2 col-md-offset-5">
+                    <div style="padding-top: 20px;" class="col-md-2 col-md-offset-5">
                         <div class="fb-like" data-href="http://kwpu.azurewebsites.net/home/" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true"></div>  
                     </div>                    
 
