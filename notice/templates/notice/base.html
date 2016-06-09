@@ -28,6 +28,8 @@
     <title>광운대학교 풍물 굿패 연합</title>
 
 
+
+
     <!-- Bootstrap -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.10.11/css/dataTables.bootstrap.min.css" rel="stylesheet">
@@ -44,6 +46,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <link rel="shortcut icon" href="/homejjang.ico">
+
+    
+
+    <link rel="stylesheet" href="{% static 'happenings/css/calendar.css' %}">
+
 
 
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
@@ -829,7 +836,13 @@ background-color:#FF9999;
                             <a href="{% url "notice:post_list" %}" class="faa-parent animated-hover">
                                 <i class="fa fa-fw fa-lg fa-thumbs-up faa-tada faa-fast"></i>공지사항
                             </a>
-                        </li>                        
+                        </li>
+
+                        <li>
+                            <a href="{% url "calendar:list" %}" class="faa-parent animated-hover">
+                                <i class="fa fa-fw fa-lg fa-calendar-check-o faa-tada faa-fast"></i>풍연스케쥴
+                            </a>
+                        </li>                                                
 
 
                         <li class="dropdown">
@@ -1009,7 +1022,7 @@ background-color:#FF9999;
             </style>
 
 
-
+<script src="{% static 'happenings/js/calendar.js' %}"></script>
 
 
 

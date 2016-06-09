@@ -36,6 +36,7 @@ urlpatterns = [
     url(r'^accounts/',include('django.contrib.auth.urls')),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^goodcolumn/', include('goodcolumn.urls',namespace='goodcolumn')),
+    url(r'^calendar/', include('happenings.urls', namespace='calendar')),
 
     
     url(r'^$' , lambda r: redirect('home:home')),

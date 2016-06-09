@@ -1,0 +1,87 @@
+{% extends 'notice/base.html' %}
+{% load staticfiles i18n %}
+
+{% block content %}
+
+
+
+    <header class="intro-header" style="background-image: url({% static "img/calendar.jpg"%})">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>풍연 스케쥴</h1>
+                        <hr class="small">
+                        <span class="subheading">'풍연 스케쥴과 풍방 예약 상태를 확인하세요'</span>
+                    </div>
+
+                    <div align="center">
+                         <a style="font-size: 50px;color: white" class="page-scroll " href="#example">
+                            <i class="glyphicon glyphicon-download"></i>
+                        </a>
+                    </div> 
+
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End header part -->
+
+<div align="center">
+    <div align="center" style="max-width:800px;border:3px solid black;" >
+
+        {% if cal_error %}
+            {{ cal_error }}
+        {% endif %}
+
+        <h1>
+            
+        {% if cal_category and cal_tag %}
+                {% blocktrans with c=cal_category t=cal_tag %}
+                in category <span id="cal-day-category">{{ c }}</span>
+                with tag <span id="cal-day-tag">{{ t }}</span>
+                {% endblocktrans %}
+        {% elif cal_category %}
+                {% blocktrans with c=cal_category t=cal_tag %}
+                with category <span id="cal-day-category">{{ c }}</span>
+                {% endblocktrans %}
+        {% elif cal_tag %}
+                {% blocktrans with c=cal_category t=cal_tag %}
+                with tag = <span id="cal-day-tag">{{ t }}</span>
+                {% endblocktrans %}
+        {% endif %}
+        </h1>
+        
+        <h2>
+            <span id="cal-day-year">{{ year }}년</span>
+            <span id="cal-day-mo">{{ month }}</span> 
+            <span id="cal-day-day">{{ day }}일</span> 
+
+        </h2>
+
+        
+            <ul style=" list-style:none;padding-top: 30px;font-size: 40px;color: darkred;" class="day-event-list">
+                {% for event in events %}
+                    <li><a href="{{ event.get_absolute_url }}">{{ event.title }}</a></li>
+                {% empty %}
+                    {% trans "해당 날짜에 등록된 행사가 없습니다.!" %}
+                {% endfor %}
+            </ul>
+
+        <div style="padding:20px;">
+                <a  href="{% url "calendar:list" %}">
+                    <button class="btn btn-warning">
+                        {% trans "달력 화면보기" %}
+                    </button>
+                </a>
+        </div>
+
+
+    </div>
+
+</div>
+
+    
+{% endblock content %}
+

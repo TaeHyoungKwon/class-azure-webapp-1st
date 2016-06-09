@@ -1,0 +1,58 @@
+{% extends 'notice/base.html' %}
+{% load staticfiles happenings_tags %}
+
+{% block content %}
+
+<link href=" {% static 'happenings/css/calendar.css' %}" rel="stylesheet">
+    <!-- Start header part -->
+  <!-- Start header part -->
+    <header class="intro-header" style="background-image: url({% static "img/calendar.jpg"%})">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>풍연 스케쥴</h1>
+                        <hr class="small">
+                        <span class="subheading">'풍연 스케쥴과 풍방 예약 상태를 확인하세요'</span>
+                    </div>
+
+                    <div align="center">
+                         <a style="font-size: 50px;color: white" class="page-scroll " href="#example">
+                            <i class="glyphicon glyphicon-download"></i>
+                        </a>
+                    </div> 
+
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- End header part -->
+
+{% if cal_error %}
+    {{ cal_error }}
+{% endif %}
+
+<div id="event-calendar">
+    {{ calendar|safe }}
+</div>
+
+{% if show_events %}
+<h1 id="month-list-events-title">
+    {% if cal_category and cal_tag %}
+        Events in category {{ cal_category }}
+        with tag = {{ cal_tag }}
+    {% elif cal_category %}
+        Events in {{ cal_category }}
+    {% elif cal_tag %}
+        Events with tag = {{ cal_tag }}
+    {% else %}
+        Events
+    {% endif %}
+</h1>
+
+<h3>For <span id="month-and-year">{{ month_and_year }}</span></h3>
+{% include 'happenings/partials/event_list.html' %}
+{% endif %}
+
+{% endblock content %}

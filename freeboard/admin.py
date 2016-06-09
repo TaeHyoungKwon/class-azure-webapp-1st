@@ -1,3 +1,6 @@
+
+
+'''
 from django import forms
 from django.contrib import admin
 from ckeditor.widgets import CKEditorWidget
@@ -13,4 +16,4 @@ class PostAdminForm(forms.ModelForm):
 class PostAdmin(admin.ModelAdmin):
     form = PostAdminForm
 
-admin.site.register(Post)
+admin.site.register(Post)'''
