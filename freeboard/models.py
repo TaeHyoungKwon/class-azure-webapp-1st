@@ -45,7 +45,7 @@ class Comment(models.Model):
 	comment_user = models.ForeignKey(settings.AUTH_USER_MODEL,null=True, related_name='comments_author')
 	comment_message = models.TextField()
 	comment_created_date = models.DateTimeField(default=timezone.now)
-	likes = models.PositiveIntegerField(default=0)
+	
 
 	def get_absolute_url(self):
 		return reverse('freeboard:post_detail', args=[self.post_id])
