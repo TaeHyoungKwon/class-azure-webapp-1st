@@ -114,6 +114,8 @@
 
 </div>
 
+
+
 <div style="padding-bottom: 30px;width: 50%" class="col-lg-5"  style="padding:20px;">
 
 <h1 align="center">좋아요 TOP5</h1>
@@ -123,7 +125,7 @@
             <tr style="background-color: #4682b4;font-size: 25px;">
                 <th style="text-align: center;color: white;">제목</th>
                 <th style="text-align: center;color: white;">작성자</th>
-                <th style="text-align: center;color: white;">조회수</th>              
+                <th style="text-align: center;color: white;">좋아요</th>              
 
             </tr>
         </thead>
@@ -137,7 +139,7 @@
                 <td><a style="font-size: 25px;color: #4682b4;" href="{% url "freeboard:post_detail" post.pk%}"> {{ post.title }} </a></td>
                
                 <td>{{ post.user }}</td>
-                <td>{{post.hit}}</td> 
+                <td>{{ post.likes }}</td> 
             
             </tr>
         {% endfor %}
