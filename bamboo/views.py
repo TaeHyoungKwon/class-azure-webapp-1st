@@ -19,6 +19,10 @@ from django.http import HttpResponse
 @login_required
 def post_list(request):
     queryset_list =Post.objects.all().order_by('-created_date')
+
+    rank_hit_records= Post.objects.all().order_by('-hit')[:5]
+    rank_like_records = Post.objects.all().order_by('-likes')[:5]
+
     query=request.GET.get("q")
 
     if query:
@@ -40,7 +44,9 @@ def post_list(request):
 
     context ={
         "object_list":queryset,
-        "title":"List"
+        "title":"List",
+        "rank_hit_records":rank_hit_records,
+        "rank_like_records":rank_like_records,
     }
     
     return render(request,"bamboo/post_list.html",context)
