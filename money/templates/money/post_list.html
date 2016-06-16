@@ -21,7 +21,7 @@
                             <i class="glyphicon glyphicon-download"></i>
                         </a>
                     </div> 
-
+                
             </div>
         </div>
     </div>
@@ -30,6 +30,10 @@
 
 
 <style type="text/css">
+
+    @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,700,400italic);
+
+    font-family: 'Open Sans', sans-serif;
 
 
     body {
@@ -50,43 +54,44 @@
 
 
 .myButton {
-  -moz-box-shadow: 0px 10px 14px -7px #276873;
-  -webkit-box-shadow: 0px 10px 14px -7px #276873;
-  box-shadow: 0px 10px 14px -7px #276873;
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #599bb3), color-stop(1, #408c99));
-  background:-moz-linear-gradient(top, #599bb3 5%, #408c99 100%);
-  background:-webkit-linear-gradient(top, #599bb3 5%, #408c99 100%);
-  background:-o-linear-gradient(top, #599bb3 5%, #408c99 100%);
-  background:-ms-linear-gradient(top, #599bb3 5%, #408c99 100%);
-  background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#599bb3', endColorstr='#408c99',GradientType=0);
-  background-color:#599bb3;
-  -moz-border-radius:8px;
-  -webkit-border-radius:8px;
-  border-radius:8px;
-  display:inline-block;
-  cursor:pointer;
-  color:#ffffff;
-  font-family:Arial;
-  font-size:20px;
-  font-weight:bold;
-  padding:13px 32px;
-  text-decoration:none;
-  text-shadow:0px 1px 0px #3d768a;
+    -moz-box-shadow:inset 0px 1px 0px 0px #efdcfb;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #efdcfb;
+    box-shadow:inset 0px 1px 0px 0px #efdcfb;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dfbdfa), color-stop(1, #bc80ea));
+    background:-moz-linear-gradient(top, #dfbdfa 5%, #bc80ea 100%);
+    background:-webkit-linear-gradient(top, #dfbdfa 5%, #bc80ea 100%);
+    background:-o-linear-gradient(top, #dfbdfa 5%, #bc80ea 100%);
+    background:-ms-linear-gradient(top, #dfbdfa 5%, #bc80ea 100%);
+    background:linear-gradient(to bottom, #dfbdfa 5%, #bc80ea 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfbdfa', endColorstr='#bc80ea',GradientType=0);
+    background-color:#dfbdfa;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #c584f3;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #9752cc;
 }
 .myButton:hover {
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #408c99), color-stop(1, #599bb3));
-  background:-moz-linear-gradient(top, #408c99 5%, #599bb3 100%);
-  background:-webkit-linear-gradient(top, #408c99 5%, #599bb3 100%);
-  background:-o-linear-gradient(top, #408c99 5%, #599bb3 100%);
-  background:-ms-linear-gradient(top, #408c99 5%, #599bb3 100%);
-  background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#408c99', endColorstr='#599bb3',GradientType=0);
-  background-color:#408c99;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bc80ea), color-stop(1, #dfbdfa));
+    background:-moz-linear-gradient(top, #bc80ea 5%, #dfbdfa 100%);
+    background:-webkit-linear-gradient(top, #bc80ea 5%, #dfbdfa 100%);
+    background:-o-linear-gradient(top, #bc80ea 5%, #dfbdfa 100%);
+    background:-ms-linear-gradient(top, #bc80ea 5%, #dfbdfa 100%);
+    background:linear-gradient(to bottom, #bc80ea 5%, #dfbdfa 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bc80ea', endColorstr='#dfbdfa',GradientType=0);
+    background-color:#bc80ea;
 }
 .myButton:active {
-  position:relative;
-  top:1px;
+    position:relative;
+    top:1px;
 }
 
 
@@ -143,10 +148,10 @@
 
     {% for post in object_list %}
         <div style="padding-top: 30px;" class="col-xs-18 col-sm-6 col-md-3">
-            <div style="max-height: 400px;border-top: 5px solid #599bb3;" class="thumbnail">
+            <div  style="max-height: 400px;border-top: 5px solid purple;" class="thumbnail">
 
             {% if user == post.user %}
-            <span style="font-size: 15px;">
+                                    <span style="font-size: 15px;">
                         {{ post.created_date | date:"Y/m/d/P"}}</span>
 
                 <div style="text-align: right;">
@@ -167,11 +172,11 @@
 
                     <div class="caption">
 
-                        <p style="font-size: 17px;font-weight: bold;">{{ post.title }}</p>
+                         <p style="font-size: 17px;font-weight: bold;">{{ post.title }}</p>
                         
 
                         <p>
-                            <a style="border: 3px solid #599bb3;min-width: 100%;" href="{% url "money:post_detail" post.pk%}" class="btn btn-default btn-xs" role="button">게시글 보기</a>                    
+                            <a style="border: 3px solid #dfbdfa;min-width: 100%;" href="{% url "money:post_detail" post.pk%}" class="btn btn-default btn-xs" role="button">게시글 보기</a>                    
                         </p>
                         <hr>
 
@@ -181,12 +186,12 @@
                         <a href="#">
                             <i class="fa fa-comment" aria-hidden="true"></i>
                         </a>
-                        <span style="font-size: 20px;font-weight: bold">{{ post.comments.count }}</span>                    
+                        <span style="font-size: 20px;font-weight: bold">{{ post.money_comments.count }}</span>                    
 
 
                     </div>
                     <div align="center">
-                        
+
                         <span style="font-size:20px;"> {{post.user}}</span>
                     </div>                
                 </div>
